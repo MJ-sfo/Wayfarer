@@ -7,3 +7,4 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+// this gets main index.html, then push to website
