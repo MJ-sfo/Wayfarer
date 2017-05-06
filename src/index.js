@@ -4,6 +4,7 @@ import {Router, browserHistory, Route} from 'react-router'
 import Home from './Home'
 import City from './City'
 import Layout from './Layout'
+import './index.css'
 
 ReactDOM.render(
   <Layout>

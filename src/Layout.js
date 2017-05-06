@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
-// import {Link} from 'react-router'
 
 class Layout extends Component {
   render() {
