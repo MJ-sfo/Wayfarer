@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import {Router, browserHistory, Route} from 'react-router'
+import Home from './Home'
+import City from './City'
+import Layout from './Layout'
+import './index.css'
 
 ReactDOM.render(
-  <App />,
+  <Layout>
+    <Router history={browserHistory}>
+      <Route path='/' component={Home} />
+      <Route path='/cities' component={City} />
+    </Router>
+  </Layout>,
   document.getElementById('root')
 );
-// this gets main index.html, then push to website
