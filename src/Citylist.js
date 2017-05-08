@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import PostIndiv from './PostIndiv';
 import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
+import City from './City'
 
-class PostContainer extends Component {
+class Citylist extends Component {
   render() {
     return (
       <div>
-        <PostIndiv />
+        List of cities (will prob need smaller component)
       </div>
-    )
+    );
   }
 }
 
-export default PostContainer;
+export default Citylist;
