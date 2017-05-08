@@ -9,10 +9,37 @@ body {
 h1 {
   text-align: center
 }
-/*testing*/
-img {
-  width: 30%;
-  display: block;
-  margin: auto;
-  margin-bottom: 20px;
+
+img.city {
+  width: 50%
+}
+
+/*end testing*/
+.hover {
+  display: inline-block;
+  position: relative;
+}
+
+.hover .text {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 140px;
+  bottom: 0px;
+  left: 0px;
+  height:400px;
+  width:800px;
+  opacity: 0;
+  font-size: 40px;
+  color: white;
+  font-weight: bolder;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+
+.hover:hover .text {
+  opacity: 1
 }
