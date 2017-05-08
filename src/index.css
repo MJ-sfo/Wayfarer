@@ -10,6 +10,11 @@ h1 {
   text-align: center
 }
 
+img.city {
+  width: 50%
+}
+
+/*end testing*/
 .hover {
   display: inline-block;
   position: relative;

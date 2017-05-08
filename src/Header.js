@@ -38,5 +38,5 @@ class Header extends Component {
 
 export default Header;
 
-// nav links currently don't direct to diff URL.
+// nav /cities link currently don't direct to diff URL.
 // could look into <Link to={'/cities'}>Cities</Link> some more (from Todo app)

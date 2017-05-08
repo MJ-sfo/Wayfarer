@@ -9,14 +9,15 @@ class Home extends Component {
       <div>
 
         <div className="hover">
+          <Link to={'/cities'}>
             <img className="image" src={mainImage} alt={"mainImage"} height="400" width="800"/>
             <span className="text">We are a global community of travelers, sharing pro tips!</span>
+          </Link>
         </div>
         <Grid>
           <Row className="show-grid">
             <Col sm={12} md={4}><br/>Find your favorite cities</Col>
             <Col sm={12} md={4}><br/>Read Reviews</Col>
-            <Clearfix visibleSmBlock><code>&lt;{'Clearfix visibleSmBlock'} /&gt;</code></Clearfix>
             <Col sm={12} md={4}><br/>Share your favs!</Col>
           </Row>
         </Grid>
