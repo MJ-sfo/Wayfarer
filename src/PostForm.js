@@ -27,12 +27,10 @@ class PostForm extends Component {
 
   handleTextChange(e) {
     this.setState({ text: e.target.value });
-    console.log('text is changing');
   }
 
   handleNameChange(e) {
     this.setState({ name: e.target.value });
-    console.log('name is changing');
   }
 
   render() {

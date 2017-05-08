@@ -5,8 +5,18 @@ import './index.css' // do we need this?
 
 class PostList extends Component {
   render() {
+    let postNodes = this.props.data.map(post => {
+     return (
+       <PostIndiv
+          name={ post.name }
+          key={ post.id }
+          text={post.text}/>
+     )
+   })
       return (
-        <PostIndiv />
+        <div className="post-list">
+          {postNodes}
+        </div>
       )
   }
 }
