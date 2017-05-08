@@ -22,7 +22,7 @@ class Home extends Component {
           </Row>
         </Grid>
 
-        <h3> <Link to={'/cities'}>Explore</Link> </h3>
+        <h3> <Link to={'/cities/1'}>Explore</Link> </h3>
 
       </div>
     );

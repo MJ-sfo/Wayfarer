@@ -4,12 +4,17 @@ import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
 class PostIndiv extends Component {
   render() {
     return (
-      <div>
+      <div className="post-indiv">
         <Grid>
           <Row className="show-grid">
-            <Col sm={12} md={3} mdOffset={1}><br/>User Pic</Col>
-            <Col sm={12} md={7}><br/>Todays tip for MUNI trunc. summary</Col>
-            <Clearfix visibleSmBlock><code>&lt;{'Clearfix visibleSmBlock'} /&gt;</code></Clearfix>
+            <Col sm={12} md={2}><br/>User Pic</Col>
+            <Col sm={12} md={6}><br/>Todays tip for MUNI trunc. summary</Col>
+          </Row>
+          <Row className="show-grid-buttons">
+            <Col sm={12} md={3} mdOffset={7}>
+              <button> Edit Post </button>
+              <button> Delete </button>
+            </Col>
           </Row>
         </Grid>
       </div>

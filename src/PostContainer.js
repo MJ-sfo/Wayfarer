@@ -6,7 +6,14 @@ class PostContainer extends Component {
   render() {
     return (
       <div>
-        <PostIndiv />
+        <Grid>
+          <Row className="post-container">
+            <Col sm={12} md={10} mdOffset={1}><br/>
+              <button> Add New Post</button>
+              <PostIndiv />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }
