@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
   //Remove caching
   res.setHeader('Cache-Control', 'no-cache');
   next();
-});
+});  //  app.use(function
 
 //set route path and init API
 router.get('/', function(req,res) {
@@ -52,14 +52,13 @@ router.route('/nuke').get(function(req,res){
 router.route('/comments')
   //retrieve all comments from the database
   .get(function(req, res) {
-    //looks at our Comment Schema
+    // looks at our Comment Schema
     db.Comment.find(function(err, comments) {
       if (err)
         res.send(err);
       //responds with a json object of our database comments.
       res.json(comments);
       console.log('router for commeents ', comments)
-
     });
     console.log('running comments router');
   })
