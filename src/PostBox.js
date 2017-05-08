@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PostIndiv from './PostIndiv';
 import $ from 'jquery-ajax';
 import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
-import './index.css';
 import PostList from './PostList';
 import PostForm from './PostForm';
 import DATA from '../data'; // delete later (starter data)
@@ -10,19 +9,18 @@ import DATA from '../data'; // delete later (starter data)
 class PostBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {data: []};
+    this.state = {data: [] };
     // this.loadPostsFromServer = this.loadPostsFromServer.bind(this);
-    // this.handlePostSubmit = this.handlePostSubmit.bind(this);
+    this.handlePostSubmit = this.handlePostSubmit.bind(this);
   }
 
-  // load all comments for that city
   // loadPostsFromServer() {
   //   $.ajax ({
   //     method: 'GET',
-  //     url: DATA
+  //     url: this.props.url // defined in City component
   //   })
   //   .then(res => {
-  //     this.setState({data: res.data.posts}) // res.data.comments or res.data?
+  //     this.setState({data: res}) // res.data.comments or res.data?
   //   })
   // }
 
@@ -31,10 +29,27 @@ class PostBox extends Component {
   //   setInterval(this.loadPostsFromServer, this.props.pollInterval)
   // }
   //
-  // handlePostSubmit(e) {
-  //   e.preventDefault();
-  //   console.log('submit clicked')
-  // }
+
+  handlePostSubmit(post) {
+    let posts = this.state.data;
+    console.log('submit success!');
+    $.ajax({
+      method: 'POST',
+      url: this.props.url,
+      data: post
+    })
+    .then((res) => {
+      let newPosts = posts.concat(res)
+      this.setState({ data: newPosts });
+      console.log('submit success!')
+    }, (err) => {
+      console.error('post error', err);
+    });
+  }
+
+  handlePostSubmit(e) {
+    console.log('submit clicked')
+  }
 
   render() {
     return (
@@ -43,7 +58,7 @@ class PostBox extends Component {
           <Row className="post-box">
             <Col sm={12} md={10} mdOffset={1}><br/>
               <PostList data = {DATA}/>
-              <PostForm/>
+              <PostForm onPostSubmit = {this.handlePostSubmit}/>
             </Col>
           </Row>
         </Grid>
@@ -54,4 +69,4 @@ class PostBox extends Component {
 
 export default PostBox;
 
-// onPostSubmit = {this.handlePostSubmit}
+// when API data is being used.. <PostList data = {this.state.data}/>

@@ -9,21 +9,20 @@ class PostForm extends Component {
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('submit was clicked!')
-    // let name = this.state.name.trim();
-    // let text = this.state.text.trim();
-    // if (! text || ! name) {
-      // return;
-    // }
-    // this.props.onPostSubmit({name: name, text: text})
-    // this.setState({name: '', text: ''})
+    console.log(`${this.state.name} said "${this.state.text}"`)
+    let name = this.state.name.trim();
+    let text = this.state.text.trim();
+    if (! text || ! name) {
+      return;
+    }
+    this.props.onPostSubmit({name: name, text: text})
+    this.setState({name: '', text: ''})
   }
-
 
   handleTextChange(e) {
     this.setState({ text: e.target.value });

@@ -44,7 +44,11 @@ img.city {
   opacity: 1
 }
 
-.post-box {
+button.edit-delete {
+  margin-right: 5px;
+}
+
+/*.post-box {
   margin-top: 30px;
   border-style: solid;
   border-width: 2px;
@@ -56,11 +60,7 @@ img.city {
   border-width: 2px;
 }
 
-button.edit-delete {
-  margin-right: 5px;
-}
-
 .post-list {
   border-style: solid;
   border-color: green;
-}
+}*/
