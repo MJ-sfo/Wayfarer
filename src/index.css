@@ -44,7 +44,7 @@ img.city {
   opacity: 1
 }
 
-.post-container {
+.post-box {
   margin-top: 30px;
   border-style: solid;
   border-width: 2px;
@@ -54,4 +54,8 @@ img.city {
   margin-bottom: 10px;
   border-style: dotted;
   border-width: 2px;
+}
+
+button.edit-delete {
+  margin-right: 5px;
 }

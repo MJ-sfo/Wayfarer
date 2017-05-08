@@ -12,8 +12,8 @@ class PostIndiv extends Component {
           </Row>
           <Row className="show-grid-buttons">
             <Col sm={12} md={3} mdOffset={7}>
-              <button> Edit Post </button>
-              <button> Delete </button>
+              <button className="edit-delete"> Edit Post </button>
+              <button className="edit-delete"> Delete </button>
             </Col>
           </Row>
         </Grid>
