@@ -67,17 +67,26 @@ class PostIndiv extends Component {
 
   render() {
     return (
-      <div className="post-indiv">
+      <div>
         <Grid>
-          <Row className="show-grid">
-            <Col sm={12} md={2}><br/>{this.props.name}</Col>
-            <Col sm={12} md={6}><br/>{this.props.text}</Col>
-
+          <Row className="show-grid post">
+            <Col className="userimage" sm={12} md={2}>
+              <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
+            </Col>
+            <Col className="userinfo" sm={12} md={6}>
+              <span id="username">{this.props.name}</span> says:
+              <br/><div className="userpost"> {this.props.text} </div>
+              <br/> <br/>
+              <a className="edit-delete" onClick={ this.updatePost }> Edit </a> <span id="or">or</span>
+              <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
+            </Col>
+            <Col className="userinfo" sm={12} md={2}>
+              <div className="dateposted">May 5th at 10:00:00 PM</div>
+            </Col>
           </Row>
+
           <Row className="show-grid-buttons">
             <Col sm={12} md={3} mdOffset={7}>
-              <button className="edit-delete" onClick={ this.updatePost }> Edit Post </button>
-              <button className="edit-delete" onClick={ this.deletePost }> Delete </button>
               { (this.state.toBeUpdated)
                 ? (<form onSubmit={ this.handlePostUpdate }>
                     <input
@@ -98,6 +107,7 @@ class PostIndiv extends Component {
             </Col>
           </Row>
         </Grid>
+        <hr/>
         <div> {
           (this.state.showDialog) &&
           <ReactConfirmAlert
@@ -117,4 +127,4 @@ class PostIndiv extends Component {
 export default PostIndiv;
 
 // on delete -> cancel & submit, error: index.js:44 Uncaught TypeError: Cannot read property 'parentNode' of null
-// how to incorporate ${this.props.name} in the delete confirmation modal message? 
+// how to incorporate ${this.props.name} in the delete confirmation modal message?

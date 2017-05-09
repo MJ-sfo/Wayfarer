@@ -76,7 +76,7 @@ class PostBox extends Component {
       <div>
         <Grid>
           <Row className="post-box">
-            <Col sm={12} md={10} mdOffset={1}><br/>
+            <Col sm={12} md={8} mdOffset={2}><br/>
               <PostList
                 data={this.state.data}
                 onPostDelete={this.handlePostDelete}

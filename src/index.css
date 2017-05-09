@@ -64,3 +64,31 @@ button.edit-delete {
   border-style: solid;
   border-color: green;
 }*/
+
+div.post {
+  font-family: 'Open Sans';
+  text-align: left;
+  position: relative
+}
+
+img.userimage {
+  display: block;
+  margin-left: 20px;
+}
+
+span#username {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+div.dateposted {
+  position: absolute;
+  top: 0;
+  right: 0
+}
+
+span#or {
+  font-weight: bolder;
+  margin-left: 5px;
+  margin-right: 5px;
+}
