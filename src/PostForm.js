@@ -42,10 +42,10 @@ class PostForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="post-form">
         <a onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </a>
         { (this.state.showModal)
-          ? (<form onSubmit={ this.handleSubmit }>
+          ? (<form className="form" onSubmit={ this.handleSubmit }>
               <input
                 type='text'
                 placeholder='Update name...'

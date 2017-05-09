@@ -48,22 +48,7 @@ button.edit-delete {
   margin-right: 5px;
 }
 
-/*.post-box {
-  margin-top: 30px;
-  border-style: solid;
-  border-width: 2px;
-}
 
-.post-indiv {
-  margin-bottom: 10px;
-  border-style: dotted;
-  border-width: 2px;
-}
-
-.post-list {
-  border-style: solid;
-  border-color: green;
-}*/
 
 div.post {
   font-family: 'Open Sans';
@@ -81,6 +66,10 @@ span#username {
   font-size: 20px;
 }
 
+div.userpost {
+  margin-left: 20px;
+}
+
 div.dateposted {
   position: absolute;
   top: 0;
@@ -92,3 +81,58 @@ span#or {
   margin-left: 5px;
   margin-right: 5px;
 }
+
+form {
+  position: relative;
+}
+
+div.post-form {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+form.form {
+  margin-top: 10px;
+}
+
+div.cities-hover {
+  display: inline-block;
+  position: relative;
+}
+
+.cities-hover .cities-text {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 140px;
+  /*bottom: 0px;*/
+  left: 0px;
+  height: 400px;
+  width: 800px;
+  opacity: 0;
+  font-size: 40px;
+  color: white;
+  font-weight: bolder;
+  transition: opacity 500ms;
+}
+
+.cities-hover:hover .cities-text {
+  opacity: 1;
+}
+
+/*.post-box {
+  margin-top: 30px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.post-indiv {
+  margin-bottom: 10px;
+  border-style: dotted;
+  border-width: 2px;
+}
+
+.post-list {
+  border-style: solid;
+  border-color: green;
+}*/

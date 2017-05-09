@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Citylist from './Citylist'
+import Citylist from './Citylist';
+import citiesImage from '../public/images/suitcase.jpg';
 
 // this is when Route path='/cities' (index.js)
 class Cities extends Component {
   render() {
     return (
-      <div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGNvYs2__3w_AWwR7XhqjS_wcg7dnVdQwY9YfKo9MoGkYfT3upexWjiqrJ" alt="suitcase"/>
+      <div className="cities-hover">
+        <img src={citiesImage} alt={"citiesImage"} height="400" width="800"/>
+        <span className="cities-text">Find a City</span>
         <Citylist />
       </div>
     );

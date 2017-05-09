@@ -88,22 +88,22 @@ class PostIndiv extends Component {
           </Row>
 
           <Row className="show-grid-buttons">
-            <Col sm={12} md={3} mdOffset={7}>
+            <Col sm={12} md={3} mdOffset={2}>
               { (this.state.toBeUpdated)
                 ? (<form onSubmit={ this.handlePostUpdate }>
                     <input
                       type='text'
                       placeholder='Update name...'
                       value={ this.state.name }
-                      onChange={ this.handleNameChange } />
+                      onChange={ this.handleNameChange } /> <span>
                     <input
                       type='text'
                       placeholder='Update your comment...'
                       value={ this.state.text }
-                      onChange={ this.handleTextChange } />
+                      onChange={ this.handleTextChange } /> </span> <span>
                     <input
                       type='submit'
-                      value='Update' />
+                      value='Update' /> </span>
                   </form>)
                 : null}
             </Col>
