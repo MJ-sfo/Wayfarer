@@ -5,13 +5,32 @@ body {
   text-align: center
 }
 
+img.main-image {
+  width: 100%;
+  z-index: 0;
+  top: 0;
+}
+
+div.header {
+  position: absolute
+}
 /*testing*/
-h1 {
-  text-align: center
+h1.header {
+  text-align: center;
+  color: black;
+}
+
+h3.explore {
+  font-family: 'Open Sans';
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: 5px;
 }
 
 img.city {
-  width: 50%
+  width: 100%;
+  z-index: 0;
+  top: 0;
 }
 
 /*end testing*/
@@ -127,6 +146,7 @@ p {
   padding-top: 30px;
 
 }
+
 
 /*.post-box {
   margin-top: 30px;

@@ -7,13 +7,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-
-        <div className="hover">
-          <Link to={'/cities'}>
-            <img className="image" src={mainImage} alt={"mainImage"}/>
-            <span className="text">We are a global community of travelers, sharing pro tips!</span>
-          </Link>
-        </div>
+        <img className="main-image" src={mainImage} alt={"mainImage"}/>
+        <h1 className="header"> Wayfarer </h1>
+        <h3 className="explore"> <Link to={'/cities/1'}>Explore</Link> </h3>
         <Grid>
           <Row className="show-grid">
             <Col sm={12} md={4}><br/>Find your favorite cities</Col>
@@ -21,9 +17,6 @@ class Home extends Component {
             <Col sm={12} md={4}><br/>Share your favs!</Col>
           </Row>
         </Grid>
-
-        <h3> <Link to={'/cities/1'}>Explore</Link> </h3>
-
       </div>
     );
   }
