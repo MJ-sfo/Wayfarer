@@ -4,6 +4,7 @@ import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 // import marked from 'marked' - do we need this? (MERN crud lab used this rawMarkup)
 
+
 class PostIndiv extends Component {
   constructor(props) {
     super(props);
@@ -60,6 +61,17 @@ class PostIndiv extends Component {
     console.log('post was deleted through modal');
   }
 
+  timePassed(post_time) {
+    //  Date.now()
+    let now = new Date().getTime();
+    // var seconds = new Date().getTime() / 1000;
+    console.log(now);
+    // let difference = post_time - now;
+    // let seconds = Math.floor(difference/1000);
+    // console.log("the seconds passed are ", seconds);
+    // return seconds;
+    return now;
+  }
   // deletePost(e) {
   //   e.preventDefault();
   //   let id = this.props.uniqueID;
@@ -83,7 +95,7 @@ class PostIndiv extends Component {
               <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
             </Col>
             <Col className="userinfo" sm={12} md={2}>
-              <div className="dateposted">{this.props.date}</div>
+              <div className="dateposted">{this.timePassed(this.props.date)}</div>
             </Col>
           </Row>
 
