@@ -116,8 +116,9 @@ div.cities-hover {
 
 .cities-hover:hover .cities-text {
   opacity: 1;
+}
 
-  
+
 .iconImage:hover {
   opacity: .5;
   cursor: pointer;
