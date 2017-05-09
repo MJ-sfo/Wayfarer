@@ -4,7 +4,6 @@ import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 // import marked from 'marked' - do we need this? (MERN crud lab used this rawMarkup)
 
-
 class PostIndiv extends Component {
   constructor(props) {
     super(props);
@@ -63,14 +62,22 @@ class PostIndiv extends Component {
 
   timePassed(post_time) {
     //  Date.now()
-    let now = new Date().getTime();
+
+    let now = new Date().getTime() ;
+    // now = Math.floor(now / 1000);
+    // return now;
+
     // var seconds = new Date().getTime() / 1000;
-    console.log(now);
-    // let difference = post_time - now;
-    // let seconds = Math.floor(difference/1000);
+    // // console.log(now);
+    post_time = Date.parse(post_time);
+    let difference = (now - post_time) /1000 ;
+    // // let seconds = Math.floor(difference/1000);
     // console.log("the seconds passed are ", seconds);
-    // return seconds;
-    return now;
+
+    // let turnToSec = post_time.getTime();
+    // return turnToSec;
+    // console.log(post_time);
+    return difference;
   }
   // deletePost(e) {
   //   e.preventDefault();
