@@ -10,7 +10,7 @@ class PostIndiv extends Component {
       text: '',
       toBeUpdated: false,
     }
-    // this.deletePost = this.deletePost.bind(this);
+    this.deletePost = this.deletePost.bind(this);
     // this.updatePost = this.updatePost.bind(this);
     // this.handleNameChange = this.handleNameChange.bind(this);
     // this.handleTextChange = this.handleTextChange.bind(this);
@@ -41,6 +41,7 @@ class PostIndiv extends Component {
 
   deletePost(e) {
     e.preventDefault();
+    console.log(this.props.uniqueID)
     let id = this.props.uniqueID;
     this.props.onPostDelete(id);
     console.log('oops deleted');

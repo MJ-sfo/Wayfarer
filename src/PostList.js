@@ -6,12 +6,12 @@ class PostList extends Component {
     let postNodes = this.props.data.map( post => {
      return (
        <PostIndiv
-          text={post.text}
+          key={post._id}
           name={ post.name }
+          text={post.text}
           uniqueID={post._id}
-          key={ post._id }
-          onCommentDelete={ this.props.onCommentDelete }
-          onCommentUpdate={ this.props.onCommentUpdate } />
+          onPostDelete={ this.props.onPostDelete }
+          onPostUpdate={ this.props.onPostUpdate } />
         )
       })
       return (
@@ -25,17 +25,4 @@ class PostList extends Component {
 export default PostList;
 
 
-// let postNodes = this.props.data.map( post => {
-//   return (
-//     <PostIndiv
-//       name= {post.name}
-//       uniqueID = {post['_id']}
-//       key = {post._id}
-//       text = { post.text } />
-//   )
-// })
-// return (
-//   <div>
-//     {postNodes}
-//   </div>
-// )
+// after post, warning: line 9 --- Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `PostList`.
