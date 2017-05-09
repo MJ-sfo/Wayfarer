@@ -7,10 +7,10 @@ class PostList extends Component {
     let postNodes = this.props.data.map( post => {
      return (
        <PostIndiv
+          text={post.text}
           name={ post.name }
           uniqueID = {post._id}
           key={ post._id }
-          text={post.text}
           onCommentDelete={ this.props.onCommentDelete }
           onCommentUpdate={ this.props.onCommentUpdate } />
         )

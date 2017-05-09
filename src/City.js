@@ -20,8 +20,3 @@ class City extends Component {
 }
 
 export default City;
-
-// <PostBox
-//   url=''
-//   pollInterval={2000}/>
-// ^ to be updated with api data

@@ -67,5 +67,3 @@ class PostBox extends Component {
 }
 
 export default PostBox;
-
-// when API data is being used.. <PostList data = {this.state.data}/>
