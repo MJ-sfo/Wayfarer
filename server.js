@@ -20,9 +20,9 @@ var dbPassword = process.env.MLAB_DBPASSWORD
 var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com:33331/mywayfarer'
 // mongoose.connect(databaseUrl)
 
-//config API to use bodyParser and look for JSON in req.body
-// app.use(bodyParser.urlencoded({extended: true }));
-// app.use(bodyParser.json());
+// config API to use bodyParser and look for JSON in req.body
+app.use(bodyParser.urlencoded({extended: true }));
+app.use(bodyParser.json());
 
 //Prevent CORS errors
 app.use(function(req, res, next) {
@@ -58,14 +58,15 @@ router.route('/comments')
         res.send(err);
       //responds with a json object of our database comments.
       res.json(comments);
-      console.log('router for commeents ', comments)
+      console.log('router for comments ', comments)
     });
     console.log('running comments router');
   })
-
   .post(function(req, res) {
+    console.log('post server route')
     var post = new db.Comment();
     //body parser lets us use the req.body
+    console.log('req body is', req.body)
     post.name = req.body.name;
     post.text = req.body.text;
 
