@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
 import PostBox from './PostBox'
 
 // this is when Route path='/cities/1' (index.js)
@@ -9,17 +8,14 @@ class City extends Component {
     return (
       <div>
         <h1>San Francisco</h1>
-        <img className="city" src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1429821784/CHARMING0415-san-francisco.jpg?itok=vmayDoQQ"/>
+        <img className="city" src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1429821784/CHARMING0415-san-francisco.jpg?itok=vmayDoQQ" alt="sf-city"/>
 
-      <PostBox/>
+      <PostBox
+        url='http://localhost:3001/api/comments'
+        pollInterval={2000}/>
       </div>
     );
   }
 }
 
 export default City;
-
-// <PostBox
-//   url=''
-//   pollInterval={2000}/>
-// ^ to be updated with api data

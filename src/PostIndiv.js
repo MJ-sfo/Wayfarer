@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
-import marked from 'marked'
+import {Grid, Row, Col} from 'react-bootstrap';
+// import marked from 'marked'
 
 class PostIndiv extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state={
       name: '',
       text: '',
       toBeUpdated: false,
@@ -58,7 +58,6 @@ class PostIndiv extends Component {
       <div className="post-indiv">
         <Grid>
           <Row className="show-grid">
-            <Col sm={12} md={2}><br/>{this.props.image}</Col>
             <Col sm={12} md={2}><br/>{this.props.name}</Col>
             <Col sm={12} md={6}><br/>{this.props.text}</Col>
 
@@ -73,7 +72,7 @@ class PostIndiv extends Component {
                       type='text'
                       placeholder='Update name...'
                       value={ this.state.name }
-                      onChange= { this.handleNameChange } />
+                      onChange={ this.handleNameChange } />
                     <input
                       type='text'
                       placeholder='Update your comment...'

@@ -1,34 +1,32 @@
 import React, { Component } from 'react';
-import PostIndiv from './PostIndiv';
 import $ from 'jquery-ajax';
-import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
+import {Grid, Row, Col} from 'react-bootstrap';
 import PostList from './PostList';
 import PostForm from './PostForm';
-import DATA from '../data'; // delete later (starter data)
 
 class PostBox extends Component {
   constructor(props) {
     super(props);
     this.state = {data: [] };
-    // this.loadPostsFromServer = this.loadPostsFromServer.bind(this);
+    this.loadPostsFromServer = this.loadPostsFromServer.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
   }
 
-  // loadPostsFromServer() {
-  //   $.ajax ({
-  //     method: 'GET',
-  //     url: this.props.url // defined in City component
-  //   })
-  //   .then(res => {
-  //     this.setState({data: res}) // res.data.comments or res.data?
-  //   })
-  // }
+  loadPostsFromServer() {
+    $.ajax ({
+      method: 'GET',
+      url: this.props.url // defined in City component
+    })
+    .then(res => {
+      this.setState({data: res}) // res.data.comments or res.data?
+    })
+  }
 
-  // componentDidMount() {
-  //   this.loadPostsFromServer();
-  //   setInterval(this.loadPostsFromServer, this.props.pollInterval)
-  // }
-  //
+  componentDidMount() {
+    this.loadPostsFromServer();
+    setInterval(this.loadPostsFromServer, this.props.pollInterval)
+  }
+
 
   handlePostSubmit(post) {
     let posts = this.state.data;
@@ -47,18 +45,14 @@ class PostBox extends Component {
     });
   }
 
-  handlePostSubmit(e) {
-    console.log('submit clicked')
-  }
-
   render() {
     return (
       <div>
         <Grid>
           <Row className="post-box">
             <Col sm={12} md={10} mdOffset={1}><br/>
-              <PostList data = {DATA}/>
-              <PostForm onPostSubmit = {this.handlePostSubmit}/>
+              <PostList data={this.state.data} />
+              <PostForm onPostSubmit={this.handlePostSubmit}/>
             </Col>
           </Row>
         </Grid>
@@ -68,5 +62,3 @@ class PostBox extends Component {
 }
 
 export default PostBox;
-
-// when API data is being used.. <PostList data = {this.state.data}/>

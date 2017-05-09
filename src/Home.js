@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
-import { Route, RouteHandler, Link } from 'react-router';
+import {Grid, Row, Col} from 'react-bootstrap';
+import {Link } from 'react-router';
 import mainImage from '../public/images/travel.jpg'
 
 class Home extends Component {
