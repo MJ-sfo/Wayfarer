@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
-import City from './City'
 
 class Citylist extends Component {
   render() {

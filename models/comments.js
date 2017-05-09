@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 var CommentsSchema = new Schema({
   name: String,
-  text: String
+  text: String,
+  date: String
 });
 
 // this exports a value, not objectx

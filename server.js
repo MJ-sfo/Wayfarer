@@ -4,9 +4,8 @@
 var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
-    // Comment = require('./models/comments');
+
 var db = require('./models');
-//create instances
 var app = express(),
     router = express.Router();
 
@@ -22,7 +21,6 @@ var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com
 
 
 //config API to use bodyParser and look for JSON in req.body
-
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 
@@ -38,6 +36,9 @@ app.use(function(req, res, next) {
   next();
 });  //  app.use(function
 
+//use router config when we call /API
+app.use('/api', router);
+
 //set route path and init API
 router.get('/', function(req,res) {
   res.json({message: 'API Initialized for Wayfarer !!!'});
@@ -52,35 +53,52 @@ router.route('/nuke').get(function(req,res){
 
 //adding the /comments route to our /api router
 router.route('/comments')
-  //retrieve all comments from the database
   .get(function(req, res) {
-    // looks at our Comment Schema
     db.Comment.find(function(err, comments) {
-      if (err)
+      if (err) {
         res.send(err);
-      //responds with a json object of our database comments.
+      }
       res.json(comments);
-      console.log('router for comments ', comments)
     });
-    console.log('running comments router');
   })
   .post(function(req, res) {
     console.log('post server route')
     var post = new db.Comment();
-    //body parser lets us use the req.body
-    console.log('req body is', req.body)
     post.name = req.body.name;
     post.text = req.body.text;
-
+    post.date = req.body.date;
     post.save(function(err) {
-      if (err)
+      if (err) {
         res.send(err);
+      }
       res.json({ message: 'travel tip successfully added!' });
     });
   });
 
-//use router config when we call /API
-app.use('/api', router);
+router.route('/comments/:id')
+  .delete(function(req,res) {
+    db.Comment.remove({_id:req.params.id}, function(err, comment) {
+      if (err) {
+        res.send(err);
+      } res.json({message: 'comment has been deleted'})
+    })
+  })
+  .put(function(req,res) {
+    db.Comment.findById(req.params.id, function(err, comment) {
+      if (err) {
+        res.send(err);
+      }
+      (req.body.name) ? comment.name = req.body.name : null;
+      (req.body.text) ? comment.text = req.body.text : null;
+      (req.body.date) ? comment.date = req.body.date : null;
+      comment.save(function(err) {
+        if (err) {
+          res.send(err)
+        }
+        res.json({message: 'comment has been updated'})
+      })
+    })
+  })
 
 //start server
 app.listen(port, function() {

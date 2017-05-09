@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col, Clearfix} from 'react-bootstrap';
+import {Grid, Row, Col} from 'react-bootstrap';
 import {Link } from 'react-router';
 import mainImage from '../public/images/travel.jpg'
 import cityImage from '../public/images/city.png'

@@ -48,6 +48,76 @@ button.edit-delete {
   margin-right: 5px;
 }
 
+div.post {
+  font-family: 'Open Sans';
+  text-align: left;
+  position: relative
+}
+
+img.userimage {
+  display: block;
+  margin-left: 20px;
+}
+
+span#username {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+div.userpost {
+  margin-left: 20px;
+}
+
+div.dateposted {
+  position: absolute;
+  top: 0;
+  right: 0
+}
+
+span#or {
+  font-weight: bolder;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+form {
+  position: relative;
+}
+
+div.post-form {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+form.form {
+  margin-top: 10px;
+}
+
+div.cities-hover {
+  display: inline-block;
+  position: relative;
+}
+
+.cities-hover .cities-text {
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  margin: 0 auto;
+  padding-top: 140px;
+  /*bottom: 0px;*/
+  left: 0px;
+  height: 400px;
+  width: 800px;
+  opacity: 0;
+  font-size: 40px;
+  color: white;
+  font-weight: bolder;
+  transition: opacity 500ms;
+}
+
+.cities-hover:hover .cities-text {
+  opacity: 1;
+
+  
 .iconImage:hover {
   opacity: .5;
   cursor: pointer;
@@ -55,6 +125,7 @@ button.edit-delete {
 
 p {
   padding-top: 30px;
+
 }
 
 /*.post-box {
