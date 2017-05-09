@@ -38,8 +38,8 @@ class PostIndiv extends Component {
     let id = this.props.uniqueID;
     let name = (this.state.name) ? this.state.name : null;
     let text = (this.state.text) ? this.state.text : null;
-    let date = new Date();
-    let post = { name: name, text: text, date:date.toString()};
+    let date = Date.now(); // edit this into seconds, mins, hours, etc
+    let post = { name: name, text: text, date:date};
     this.props.onPostUpdate(id, post);
     this.setState({
       toBeUpdated: !this.state.toBeUpdated,
@@ -70,7 +70,7 @@ class PostIndiv extends Component {
   render() {
     return (
       <div>
-        <Grid>
+
           <Row className="show-grid post">
             <Col className="userimage" sm={12} md={2}>
               <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
@@ -83,7 +83,7 @@ class PostIndiv extends Component {
               <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
             </Col>
             <Col className="userinfo" sm={12} md={2}>
-              <div className="dateposted">{this.props.date}</div>
+              <div className="dateposted">Posted on: {this.props.date} ago</div>
             </Col>
           </Row>
 
@@ -108,7 +108,7 @@ class PostIndiv extends Component {
                 : null}
             </Col>
           </Row>
-        </Grid>
+
         <hr/>
         <div> {
           (this.state.showDialog) &&

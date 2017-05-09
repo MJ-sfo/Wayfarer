@@ -20,11 +20,11 @@ class PostForm extends Component {
     console.log(`${this.state.name} said "${this.state.text}"`)
     let name = this.state.name.trim();
     let text = this.state.text.trim();
-    let date = new Date();
+    let date = Date.now();
     if (! text || ! name) {
       return;
     }
-    this.props.onPostSubmit({name: name, text: text, date:date.toString()})
+    this.props.onPostSubmit({name: name, text: text, date:date})
     this.setState({name: '', text: ''})
   }
 
