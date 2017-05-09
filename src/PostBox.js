@@ -56,7 +56,7 @@ class PostBox extends Component {
         <Grid>
           <Row className="post-box">
             <Col sm={12} md={10} mdOffset={1}><br/>
-              <PostList data = {this.state.data} />
+              <PostList data = {this.state.data}/>
               <PostForm onPostSubmit = {this.handlePostSubmit}/>
             </Col>
           </Row>

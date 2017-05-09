@@ -20,7 +20,9 @@ var dbPassword = process.env.MLAB_DBPASSWORD
 var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com:33331/mywayfarer'
 // mongoose.connect(databaseUrl)
 
-// config API to use bodyParser and look for JSON in req.body
+
+//config API to use bodyParser and look for JSON in req.body
+
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 
