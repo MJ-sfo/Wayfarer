@@ -19,6 +19,7 @@ var dbPassword = process.env.MLAB_DBPASSWORD
 var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com:33331/mywayfarer'
 // mongoose.connect(databaseUrl)
 
+
 //config API to use bodyParser and look for JSON in req.body
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
@@ -60,8 +61,8 @@ router.route('/comments')
       res.json(comments);
     });
   })
-
   .post(function(req, res) {
+    console.log('post server route')
     var post = new db.Comment();
     post.name = req.body.name;
     post.text = req.body.text;

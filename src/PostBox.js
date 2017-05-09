@@ -23,11 +23,12 @@ class PostBox extends Component {
       this.setState({data: res}) // or res.data?
     })
   }
-
+  
   componentDidMount() {
     this.loadPostsFromServer();
     setInterval(this.loadPostsFromServer, this.props.pollInterval)
   }
+
 
   handlePostSubmit(post) {
     let posts = this.state.data;
