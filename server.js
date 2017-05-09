@@ -21,8 +21,8 @@ var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com
 // mongoose.connect(databaseUrl)
 
 //config API to use bodyParser and look for JSON in req.body
-// app.use(bodyParser.urlencoded({extended: true }));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true }));
+app.use(bodyParser.json());
 
 //Prevent CORS errors
 app.use(function(req, res, next) {

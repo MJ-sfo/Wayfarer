@@ -11,7 +11,6 @@ class PostList extends Component {
           uniqueID = {post._id}
           key={ post._id }
           text={post.text}
-          image={post.image}
           onCommentDelete={ this.props.onCommentDelete }
           onCommentUpdate={ this.props.onCommentUpdate } />
         )
