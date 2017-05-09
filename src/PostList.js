@@ -10,6 +10,7 @@ class PostList extends Component {
           name={ post.name }
           text={post.text}
           uniqueID={post._id}
+          date={post.date}
           onPostDelete={ this.props.onPostDelete }
           onPostUpdate={ this.props.onPostUpdate } />
         )

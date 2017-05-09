@@ -38,12 +38,14 @@ class PostIndiv extends Component {
     let id = this.props.uniqueID;
     let name = (this.state.name) ? this.state.name : null;
     let text = (this.state.text) ? this.state.text : null;
-    let post = { name: name, text: text};
+    let date = Date.now().toString();
+    let post = { name: name, text: text, date:date};
     this.props.onPostUpdate(id, post);
     this.setState({
       toBeUpdated: !this.state.toBeUpdated,
       name: '',
-      text: ''
+      text: '',
+      date:''
     })
   }
 
@@ -81,7 +83,7 @@ class PostIndiv extends Component {
               <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
             </Col>
             <Col className="userinfo" sm={12} md={2}>
-              <div className="dateposted">May 5th at 10:00:00 PM</div>
+              <div className="dateposted">{this.props.date}</div>
             </Col>
           </Row>
 

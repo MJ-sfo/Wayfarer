@@ -5,7 +5,8 @@ class PostForm extends Component {
     super(props);
     this.state = {
       name: '',
-      text: ''
+      text: '',
+      date: '',
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -17,10 +18,11 @@ class PostForm extends Component {
     console.log(`${this.state.name} said "${this.state.text}"`)
     let name = this.state.name.trim();
     let text = this.state.text.trim();
+    let date = new Date();
     if (! text || ! name) {
       return;
     }
-    this.props.onPostSubmit({name: name, text: text})
+    this.props.onPostSubmit({name: name, text: text, date:date.toString()})
     this.setState({name: '', text: ''})
   }
 

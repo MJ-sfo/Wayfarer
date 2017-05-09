@@ -65,7 +65,7 @@ router.route('/comments')
     var post = new db.Comment();
     post.name = req.body.name;
     post.text = req.body.text;
-
+    post.date = req.body.date;
     post.save(function(err) {
       if (err) {
         res.send(err);
