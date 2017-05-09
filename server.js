@@ -82,6 +82,22 @@ router.route('/comments/:id')
       } res.json({message: 'comment has been deleted'})
     })
   })
+  .put(function(req,res) {
+    db.Comment.findById(req.params.id, function(err, comment) {
+      if (err) {
+        res.send(err);
+      }
+      (req.body.name) ? comment.name = req.body.name : null;
+      (req.body.text) ? comment.text = req.body.text : null;
+
+      comment.save(function(err) {
+        if (err) {
+          res.send(err)
+        }
+        res.json({message: 'comment has been updated'})
+      })
+    })
+  })
 
 //start server
 app.listen(port, function() {
