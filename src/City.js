@@ -12,7 +12,7 @@ class City extends Component {
 
       <PostBox
         url='http://localhost:3001/api/comments'
-        pollInterval={2000}/>
+        pollInterval={1000}/>
       </div>
     );
   }

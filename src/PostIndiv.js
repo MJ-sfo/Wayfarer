@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
-// import marked from 'marked'
+import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'
+// import marked from 'marked' - do we need this? (MERN crud lab used this rawMarkup)
 
 class PostIndiv extends Component {
   constructor(props) {
@@ -9,25 +11,23 @@ class PostIndiv extends Component {
       name: '',
       text: '',
       toBeUpdated: false,
+      showDialog: false // for modal
     }
     this.deletePost = this.deletePost.bind(this);
-    // this.updatePost = this.updatePost.bind(this);
-    // this.handleNameChange = this.handleNameChange.bind(this);
-    // this.handleTextChange = this.handleTextChange.bind(this);
-    // this.handlePostUpdate = this.handlePostUpdate.bind(this);
+    this.updatePost = this.updatePost.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handlePostUpdate = this.handlePostUpdate.bind(this);
   };
-
+  
   updatePost(e) {
     e.preventDefault();
-    //brings up the update field when we click on the update link.
     this.setState({ toBeUpdated: !this.state.toBeUpdated });
   }
 
-  handleCommentUpdate(e) {
+  handlePostUpdate(e) {
     e.preventDefault();
     let id = this.props.uniqueID;
-    //if author or text changed, set it. if not, leave null and our PUT request
-    //will ignore it.
     let name = (this.state.name) ? this.state.name : null;
     let text = (this.state.text) ? this.state.text : null;
     let post = { name: name, text: text};
@@ -41,7 +41,6 @@ class PostIndiv extends Component {
 
   deletePost(e) {
     e.preventDefault();
-    console.log(this.props.uniqueID)
     let id = this.props.uniqueID;
     this.props.onPostDelete(id);
     console.log('oops deleted');
@@ -50,8 +49,22 @@ class PostIndiv extends Component {
   handleTextChange(e) {
     this.setState({ text: e.target.value });
   }
-  handleAuthorChange(e) {
-    this.setState({ author: e.target.value });
+  handleNameChange(e) {
+    this.setState({ name: e.target.value });
+  }
+
+  handlePostUpdate(e) {
+    e.preventDefault();
+    let id = this.props.uniqueID;
+    let name = (this.state.name) ? this.state.name : null;
+    let text = (this.state.text) ? this.state.text : null;
+    let post = { name: name, text: text};
+    this.props.onPostUpdate(id, post);
+    this.setState({
+      toBeUpdated: !this.state.toBeUpdated,
+      name: '',
+      text: ''
+    })
   }
 
   render() {
@@ -87,6 +100,19 @@ class PostIndiv extends Component {
             </Col>
           </Row>
         </Grid>
+
+        <div> {
+          this.state.showDialog &&
+          <ReactConfirmAlert
+            title="Confirm to Delete"
+            message="Are you sure to do this."
+            confirmLabel="Confirm"
+            cancelLabel="Cancel"
+            onConfirm={() => alert('Action after Confirm')}
+            onCancel={() => alert('Action after Cancel')}
+          />
+        } </div>
+
       </div>
     )
   }
