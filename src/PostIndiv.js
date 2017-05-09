@@ -58,7 +58,6 @@ class PostIndiv extends Component {
       <div className="post-indiv">
         <Grid>
           <Row className="show-grid">
-            <Col sm={12} md={2}><br/>{this.props.image}</Col>
             <Col sm={12} md={2}><br/>{this.props.name}</Col>
             <Col sm={12} md={6}><br/>{this.props.text}</Col>
 
