@@ -89,7 +89,7 @@ router.route('/comments/:id')
       }
       (req.body.name) ? comment.name = req.body.name : null;
       (req.body.text) ? comment.text = req.body.text : null;
-
+      (req.body.date) ? comment.date = req.body.date : null;
       comment.save(function(err) {
         if (err) {
           res.send(err)

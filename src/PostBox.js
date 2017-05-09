@@ -77,11 +77,11 @@ class PostBox extends Component {
         <Grid>
           <Row className="post-box">
             <Col sm={12} md={8} mdOffset={2}><br/>
+              <PostForm onPostSubmit={this.handlePostSubmit}/>
               <PostList
                 data={this.state.data}
                 onPostDelete={this.handlePostDelete}
                 onPostUpdate={this.handlePostUpdate}/>
-              <PostForm onPostSubmit={this.handlePostSubmit}/>
             </Col>
           </Row>
         </Grid>

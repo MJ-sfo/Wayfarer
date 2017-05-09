@@ -38,8 +38,8 @@ class PostIndiv extends Component {
     let id = this.props.uniqueID;
     let name = (this.state.name) ? this.state.name : null;
     let text = (this.state.text) ? this.state.text : null;
-    let date = Date.now().toString();
-    let post = { name: name, text: text, date:date};
+    let date = new Date();
+    let post = { name: name, text: text, date:date.toString()};
     this.props.onPostUpdate(id, post);
     this.setState({
       toBeUpdated: !this.state.toBeUpdated,
