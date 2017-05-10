@@ -60,23 +60,12 @@ class PostIndiv extends Component {
     console.log('post was deleted through modal');
   }
 
-  timePassed(post_time) {
-    //  Date.now()
+  timePassed(post_time) {  // this function shows how long ago a post was made
+    let now = new Date().getTime() ; //  time right now
+    post_time = Date.parse(post_time);  // converts text of date to number
+    let difference = Math.floor((now - post_time) /1000) ;
+    
 
-    let now = new Date().getTime() ;
-    // now = Math.floor(now / 1000);
-    // return now;
-
-    // var seconds = new Date().getTime() / 1000;
-    // // console.log(now);
-    post_time = Date.parse(post_time);
-    let difference = (now - post_time) /1000 ;
-    // // let seconds = Math.floor(difference/1000);
-    // console.log("the seconds passed are ", seconds);
-
-    // let turnToSec = post_time.getTime();
-    // return turnToSec;
-    // console.log(post_time);
     return difference;
   }
   // deletePost(e) {
