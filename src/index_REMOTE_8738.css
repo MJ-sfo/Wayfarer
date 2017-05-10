@@ -121,14 +121,11 @@ div.cities-hover {
 .iconImage:hover {
   opacity: .5;
   cursor: pointer;
+}
 
 p {
   padding-top: 30px;
 
-}
-
-.explore {
-  text-decoration: none;
 }
 
 /*.post-box {
@@ -136,11 +133,13 @@ p {
   border-style: solid;
   border-width: 2px;
 }
+
 .post-indiv {
   margin-bottom: 10px;
   border-style: dotted;
   border-width: 2px;
 }
+
 .post-list {
   border-style: solid;
   border-color: green;
