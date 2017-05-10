@@ -129,12 +129,12 @@ class PostIndiv extends Component {
                 ? (<form onSubmit={ this.handlePostUpdate }>
                     <input
                       type='text'
-                      placeholder='Update Title...'
+                      placeholder={ this.props.title }
                       value={ this.state.title }
                       onChange={ this.handleTitleChange } /> <span>
                     <input
                       type='text'
-                      placeholder='Update your comment...'
+                      placeholder={ this.props.text }
                       value={ this.state.text }
                       onChange={ this.handleTextChange } /> </span> <span>
                     <input
