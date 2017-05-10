@@ -7,25 +7,32 @@ var db = require("./models");
 
 var commentsList = [];
   commentsList.push({
-                name: 'Kevin',
-                text: 'I love this city',
+                name: 'Kevin T.',
+                text: 'I love this city except for the fog',
                 date: '1494380293364',
                 uid: '1',
-                title: 'My Post'
+                title: 'LA is better'
                 });
   commentsList.push({
-                name: 'Sejin',
+                name: 'Sejin P.',
                 text: 'I hate this city',
                 date: '1494380223364',
                 uid: '2',
-                title: 'Best title ever'
+                title: 'Bimbimbap is soooo goooood here, jk'
                 });
   commentsList.push({
-                name: 'Jane',
+                name: 'Jane W.',
                 text: 'I love this city',
                 date: '1494380293369',
                 uid: '3',
                 title: 'Counterstrike is the best'
+                });
+  commentsList.push({
+                name: 'Michael L.',
+                text: 'Learning to code in the city by the bay',
+                date: '1494380293369',
+                uid: '3',
+                title: 'SF is great'
                 });
 
 
