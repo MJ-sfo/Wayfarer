@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css'
+import 'react-confirm-alert/src/react-confirm-alert.css' 
 // import marked from 'marked' - do we need this? (MERN crud lab used this rawMarkup)
 
 class PostIndiv extends Component {
@@ -63,7 +63,7 @@ class PostIndiv extends Component {
 
   timePassed(post_time) {  // this function shows how long ago a post was made
     let now = new Date().getTime() ; //  time right now
-    post_time = Date.parse(post_time);  // converts text of date to number
+    // post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
     if ( Math.floor((difference) /(60*60*24*30) ) == 1 ) {
       return Math.floor((difference) /(60*60*24*30) ) + " month";
@@ -113,7 +113,7 @@ class PostIndiv extends Component {
           <Col className="userinfo" sm={12} md={6}>
             <h5>Title: {this.props.title}</h5>
             <span id="username">{this.props.name}</span> says:
-            <br/><div className="userpost"> {this.props.text} </div>
+            <br/><div className="userpost" className="truncate moreless"> {this.props.text} </div>
             <br/> <br/>
             <a className="edit-delete" onClick={ this.updatePost }> Edit </a> <span id="or">or</span>
             <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
