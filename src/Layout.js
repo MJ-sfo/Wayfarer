@@ -24,10 +24,10 @@ class Layout extends Component {
         this.setState({ currentUser: null });
       }
       // localStorage.
-      constant user = firebase.auth().currentUser;
+      // constant user = firebase.auth().currentUser;
       console.log("this user is: ");
-      // constant person = 
-      console.log(user);
+      // constant person =
+      console.log(currentUser);
     });  //  auth.onAuthStateChanged
   }
 
