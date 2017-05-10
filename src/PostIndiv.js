@@ -8,21 +8,22 @@ class PostIndiv extends Component {
   constructor(props) {
     super(props);
     this.state={
-      name: '',
+      // name: '', we are no longer allowing users to change name
       text: '',
+      title: '',
       toBeUpdated: false,
       showDialog: false // for delete modal
     }
     this.deletePost = this.deletePost.bind(this);
     this.updatePost = this.updatePost.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handlePostUpdate = this.handlePostUpdate.bind(this);
     this.handleDeletePost = this.handleDeletePost.bind(this);
   };
 
-  handleNameChange(e) {
-    this.setState({ name: e.target.value });
+  handleTitleChange(e) {
+    this.setState({ title: e.target.value });
   }
   handleTextChange(e) {
     this.setState({ text: e.target.value });
@@ -36,14 +37,14 @@ class PostIndiv extends Component {
   handlePostUpdate(e) {
     e.preventDefault();
     let id = this.props.uniqueID;
-    let name = (this.state.name) ? this.state.name : null;
+    let title = (this.state.title) ? this.state.title : null;
     let text = (this.state.text) ? this.state.text : null;
     let date = Date.now(); // edit this into seconds, mins, hours, etc
-    let post = { name: name, text: text, date:date};
+    let post = { title:title, text: text, date:date};
     this.props.onPostUpdate(id, post);
     this.setState({
       toBeUpdated: !this.state.toBeUpdated,
-      name: '',
+      title: '',
       text: '',
       date:''
     })
@@ -101,12 +102,6 @@ class PostIndiv extends Component {
       return difference + " seconds";
     }
   }
-  // deletePost(e) {
-  //   e.preventDefault();
-  //   let id = this.props.uniqueID;
-  //   this.props.onPostDelete(id);
-  //   console.log('oops deleted');
-  // }
 
   render() {
     return (
@@ -116,6 +111,7 @@ class PostIndiv extends Component {
             <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
           </Col>
           <Col className="userinfo" sm={12} md={6}>
+            <h5>Title: {this.props.title}</h5>
             <span id="username">{this.props.name}</span> says:
             <br/><div className="userpost"> {this.props.text} </div>
             <br/> <br/>
@@ -133,9 +129,9 @@ class PostIndiv extends Component {
                 ? (<form onSubmit={ this.handlePostUpdate }>
                     <input
                       type='text'
-                      placeholder='Update name...'
-                      value={ this.state.name }
-                      onChange={ this.handleNameChange } /> <span>
+                      placeholder='Update Title...'
+                      value={ this.state.title }
+                      onChange={ this.handleTitleChange } /> <span>
                     <input
                       type='text'
                       placeholder='Update your comment...'

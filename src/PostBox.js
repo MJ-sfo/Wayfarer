@@ -17,13 +17,13 @@ class PostBox extends Component {
   loadPostsFromServer() {
     $.ajax ({
       method: 'GET',
-      url: this.props.url // defined in City component
+      url: this.props.url
     })
     .then(res => {
-      this.setState({data: res}) // or res.data?
+      this.setState({data: res})
     })
   }
-  
+
   componentDidMount() {
     this.loadPostsFromServer();
     setInterval(this.loadPostsFromServer, this.props.pollInterval)
