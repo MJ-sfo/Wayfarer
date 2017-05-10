@@ -6,7 +6,9 @@ var Schema = mongoose.Schema;
 var CommentsSchema = new Schema({
   name: String,
   text: String,
-  date: String
+  date: String, // go back to Date later
+  uid: String,
+  title: String   //   need to store as time/date so can calculate how old a post is
 });
 
 // this exports a value, not objectx
