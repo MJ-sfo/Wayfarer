@@ -11,17 +11,24 @@ class Layout extends Component {
     }
   }
 
+
   // communicates with firebase, before stuff mounts on page
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         console.log('Logged in:', currentUser);
         this.setState({ currentUser });
+        console.log(this.state);
       } else {
         console.log('Logged out');
         this.setState({ currentUser: null });
       }
-    });
+      // localStorage.
+      constant user = firebase.auth().currentUser;
+      console.log("this user is: ");
+      // constant person = 
+      console.log(user);
+    });  //  auth.onAuthStateChanged
   }
 
   loginButtonClicked(e) {
