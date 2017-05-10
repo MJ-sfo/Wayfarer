@@ -65,9 +65,48 @@ class PostIndiv extends Component {
     let now = new Date().getTime() ; //  time right now
     post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
+<<<<<<< HEAD
 
 
     return difference;
+=======
+    if ( Math.floor((difference) /(60*60*24*30) ) == 1 ) {
+      return Math.floor((difference) /(60*60*24*30) ) + " month";
+    }
+    else if ( Math.floor((difference) /(60*60*24*30) ) > 0 ) {
+      return Math.floor((difference) /(60*60*24*30) ) + " months";
+    }
+    else if ( Math.floor((difference) /(60*60*24*7) ) == 1 ) {
+      return Math.floor((difference) /(60*60*24*7) ) + " week";
+    }
+    else if ( Math.floor((difference) /(60*60*24*7) ) > 0 ) {
+      return Math.floor((difference) /(60*60*24*7) ) + " weeks";
+    }
+    else if ( Math.floor((difference) /(60*60*24) ) == 1 ) {
+      return Math.floor((difference) /(60*60*24) ) + " day";
+    }
+    else if ( Math.floor((difference) /(60*60*24) ) > 0 ) {
+      return Math.floor((difference) /(60*60*24) ) + " days";
+    }
+    else if ( Math.floor((difference) /(60*60) ) == 1 ) {
+      return Math.floor((difference) /(60*60)  ) + " hour";
+    }
+    else if ( Math.floor((difference) /(60*60) ) > 0 ) {
+      return Math.floor((difference) /(60*60)  ) + " hours";
+    }
+    else if ( Math.floor((difference) /60 ) == 1 ) {
+      return Math.floor((difference) /60 ) + " minute";
+    }
+    else if ( Math.floor((difference) /60 ) > 0 ) {
+      return Math.floor((difference) /60 ) + " minutes";
+    }
+    else if ( Math.floor((difference)  ) == 1 ) {
+      return Math.floor((difference) /60 ) + " second";
+    }
+    else {
+      return difference + " seconds";
+    }
+>>>>>>> fe1d20385e52dd80700a0cf0bdad8fa02d63156a
   }
 
   render() {
