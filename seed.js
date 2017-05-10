@@ -9,21 +9,21 @@ var commentsList = [];
   commentsList.push({
                 name: 'Kevin',
                 text: 'I love this city',
-                date: 'Date',
+                date: '1494380293364',
                 uid: '1',
                 title: 'My Post'
                 });
   commentsList.push({
                 name: 'Sejin',
                 text: 'I hate this city',
-                date: 'Date',
+                date: '1494380293364',
                 uid: '2',
                 title: 'Best title ever'
                 });
   commentsList.push({
                 name: 'Jane',
                 text: 'I love this city',
-                date: 'Date',
+                date: '1494380293364',
                 uid: '3',
                 title: 'Counterstrike is the best'
                 });

@@ -7,6 +7,7 @@ class PostList extends Component {
      return (
        <PostIndiv
           key={post._id}
+          title={post.title}
           name={ post.name }
           text={post.text}
           uniqueID={post._id}

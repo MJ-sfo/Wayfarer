@@ -33,5 +33,8 @@ class Navbar extends Component {
 
 export default Navbar;
 
-// nav /cities link currently don't direct to diff URL.
-// could look into <Link to={'/cities'}>Cities</Link> some more (from Todo app)
+
+// Next steps:
+// 1. can we have <a> Cities </a> link to Cities page? and also
+// on hover, have it display all the cities?
+// 2. can we have mouse cursor appear when hovered on log in and log out? 

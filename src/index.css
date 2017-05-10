@@ -78,9 +78,10 @@ h1.header {
 
 h3.explore {
   font-family: 'Open Sans';
-  font-size: 40px;
+  font-size: 80px;
   font-weight: bolder;
   letter-spacing: 5px;
+  text-decoration: none
 }
 
 img.city {
