@@ -60,6 +60,14 @@ class PostIndiv extends Component {
     console.log('post was deleted through modal');
   }
 
+  timePassed(post_time) {  // this function shows how long ago a post was made
+    let now = new Date().getTime() ; //  time right now
+    post_time = Date.parse(post_time);  // converts text of date to number
+    let difference = Math.floor((now - post_time) /1000) ;
+    
+
+    return difference;
+  }
   // deletePost(e) {
   //   e.preventDefault();
   //   let id = this.props.uniqueID;
@@ -83,7 +91,7 @@ class PostIndiv extends Component {
               <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
             </Col>
             <Col className="userinfo" sm={12} md={2}>
-              <div className="dateposted">{this.props.date}</div>
+              <div className="dateposted">{this.timePassed(this.props.date)}</div>
             </Col>
           </Row>
 
