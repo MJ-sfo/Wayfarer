@@ -121,6 +121,7 @@ div.cities-hover {
 .iconImage:hover {
   opacity: .5;
   cursor: pointer;
+}
 
 p {
   padding-top: 30px;
