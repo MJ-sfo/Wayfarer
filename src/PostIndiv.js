@@ -65,11 +65,6 @@ class PostIndiv extends Component {
     let now = new Date().getTime() ; //  time right now
     post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
-<<<<<<< HEAD
-
-
-    return difference;
-=======
     if ( Math.floor((difference) /(60*60*24*30) ) == 1 ) {
       return Math.floor((difference) /(60*60*24*30) ) + " month";
     }
@@ -106,7 +101,6 @@ class PostIndiv extends Component {
     else {
       return difference + " seconds";
     }
->>>>>>> fe1d20385e52dd80700a0cf0bdad8fa02d63156a
   }
 
   render() {
