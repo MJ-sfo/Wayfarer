@@ -16,18 +16,17 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="header">
-        <ul>
-          <li><a href="/">Wayfarer</a></li>
-          <li><a href="/cities" title="Cities"
-            onMouseEnter = { this.handleOpen }
-            onMouseLeave = { this.handleClose }
-            open={ this.state.isOpen }>Cities </a> </li>
-          <li><a href="/cities/1">San Francisco</a></li>
-          <li><a onClick= {this.props.loginButtonClicked}> Log In</a></li>
-          <li><a onClick={this.props.logoutButtonClicked}> Log Out</a></li>
-        </ul>
-      </div>
+      <ul className="navbar">
+        <li id="nav-wayfarer"><a id="wayfarer" href="/"><strong>Wayfarer</strong></a></li>
+        <li id="nav-logout"><a id="logout" onClick={this.props.logoutButtonClicked}> Log Out</a></li>
+        <li><a id="login" onClick= {this.props.loginButtonClicked}> Log In</a></li>
+        <li><a id="sf" href="/cities/1">San Francisco</a></li>
+        <li><a id="cities" href="/cities" title="Cities"
+          onMouseEnter = { this.handleOpen }
+          onMouseLeave = { this.handleClose }
+          open={ this.state.isOpen }>Cities </a> </li>
+
+      </ul>
     );
   }
 }

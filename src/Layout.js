@@ -18,6 +18,7 @@ class Layout extends Component {
         console.log('Logged in:', currentUser);
         this.setState({ currentUser });
       } else {
+        console.log('Logged out');
         this.setState({ currentUser: null });
       }
     });

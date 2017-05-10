@@ -8,12 +8,68 @@ body {
 img.main-image {
   width: 100%;
   z-index: 0;
-  top: 0;
+  margin-top: 30px;
 }
 
-div.header {
-  position: absolute
+/*Styling for Navbar*/
+ul {
+  list-style: none
 }
+
+ul.navbar li {
+  float: right;
+  display: inline-block;
+}
+
+ul a:hover {
+  text-decoration: none
+}
+
+ul.navbar {
+  position: absolute;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  line-height: 0;
+  font-family: "Open Sans";
+  padding: 0;
+  text-decoration: none;
+}
+
+ul.navbar a {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+li#nav-wayfarer {
+  float: left;
+}
+
+a#wayfarer {
+  display: inline;
+  font-size: 30px;
+  line-height: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+li#nav-logout {
+  float:right;
+}
+
+a#nav-logout {
+
+}
+
+/*End styling for Navbar*/
+
+
+
 /*testing*/
 h1.header {
   text-align: center;
