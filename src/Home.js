@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import {Link } from 'react-router';
-import mainImage from '../public/images/travel.jpg'
+import mainImage from '../public/images/base.jpg'
 import locateImage from '../public/images/locate.svg'
 import blogImage from '../public/images/blog.svg'
 import reviewImage from '../public/images/review.svg'
@@ -10,16 +10,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-
-        <div className="hover">
-          <Link to={'/cities'}>
-            <img className="image" src={mainImage} alt={"mainImage"} height="400" width="800"/>
-            <span className="text">We are a global community of travelers, sharing pro tips!</span>
-          </Link>
-        </div>
-
-        <h3 className="explore"> <button bsStyle="link"><Link to={'/cities/1'}>Explore</Link></button> </h3>
-
+        <img className="main-image" src={mainImage} alt={"mainImage"}/>
+        <h3 className="explore"> <Link to={'/cities/1'}>Explore</Link> </h3>
         <Grid>
           <Row className="show-grid">
             <Col sm={12} md={4}><br/><h3>Locate Fav City</h3>
@@ -36,7 +28,6 @@ class Home extends Component {
             </Col>
           </Row>
         </Grid>
-
       </div>
     );
   }
