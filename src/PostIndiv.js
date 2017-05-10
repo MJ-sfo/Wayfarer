@@ -95,7 +95,7 @@ class PostIndiv extends Component {
     else if ( Math.floor((difference) /60 ) > 0 ) {
       return Math.floor((difference) /60 ) + " minutes";
     }
-    else if ( Math.floor((difference)  ) == 1 ) {
+    else if ( Math.floor((difference)) == 1 ) {
       return Math.floor((difference) /60 ) + " second";
     }
     else {
@@ -119,7 +119,7 @@ class PostIndiv extends Component {
             <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
           </Col>
           <Col className="userinfo" sm={12} md={2}>
-            <div className="dateposted">{this.timePassed(this.props.date)}</div>
+            <div className="dateposted">Posted: {this.timePassed(this.props.date)} ago</div>
           </Col>
         </Row>
 
