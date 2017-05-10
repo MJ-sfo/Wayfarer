@@ -7,7 +7,10 @@ class Layout extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: null
+      currentUser: null,
+      uid: '',
+      displayName: '',
+      photoURL: ''
     }
   }
 
@@ -16,6 +19,7 @@ class Layout extends Component {
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         console.log('Logged in:', currentUser);
+        console.log('uid is', currentUser.uid, 'name is', currentUser.displayName)
         this.setState({ currentUser });
       } else {
         console.log('Logged out');

@@ -6,6 +6,7 @@ import Cities from './Cities'
 import City from './City'
 import Layout from './Layout'
 import './index.css'
+import Profile from './Profile'
 
 ReactDOM.render(
   <Layout>
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Route path='/' component={Home} />
       <Route path='/cities' component={Cities} />
       <Route path='/cities/1' component={City} />
+      <Route path='/profile' component={Profile} />
     </Router>
   </Layout>,
   document.getElementById('root')
