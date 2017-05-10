@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 import {Link } from 'react-router';
-import mainImage from '../public/images/travel.jpg'
+import mainImage from '../public/images/base.jpg'
 
 class Home extends Component {
   render() {
