@@ -16,14 +16,14 @@ var commentsList = [];
   commentsList.push({
                 name: 'Sejin',
                 text: 'I hate this city',
-                date: '1494380293364',
+                date: '1494380223364',
                 uid: '2',
                 title: 'Best title ever'
                 });
   commentsList.push({
                 name: 'Jane',
                 text: 'I love this city',
-                date: '1494380293364',
+                date: '1494380293369',
                 uid: '3',
                 title: 'Counterstrike is the best'
                 });
