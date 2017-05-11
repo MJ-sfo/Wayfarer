@@ -17,11 +17,11 @@ class PostForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(`title: ${this.state.title} and text: ${this.state.text}`)
+    console.log(`new post title: ${this.state.title} and text: ${this.state.text}`)
     let title = this.state.title.trim();
     let text = this.state.text.trim();
     let date = Date.now();
-    if (! text || ! title) {
+    if (!text || !title) {
       return;
     }
     this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
@@ -50,7 +50,7 @@ class PostForm extends Component {
                 type='text'
                 placeholder='Title'
                 value={ this.state.name }
-                onChange={ this.handleNameChange } />
+                onChange={ this.handleTitleChange } />
               <input
                 type='text'
                 placeholder='Text'
