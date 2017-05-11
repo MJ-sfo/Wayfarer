@@ -34,7 +34,7 @@ class PostBox extends Component {
     console.log('incoming new post is', post, 'city is', post.city)
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3001/api/comments',
+      url: 'http://localhost:3001/api/cities',
       data: post
     })
     .then((res) => {

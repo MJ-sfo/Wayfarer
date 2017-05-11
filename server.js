@@ -61,21 +61,49 @@ router.route('/comments')
       res.json(comments);
     });
   })
-  .post(function(req, res) {
-    console.log('post server route')
+  .post(function(req,res) {
     var post = new db.Comment();
     post.name = req.body.name;
     post.title = req.body.title;
     post.text = req.body.text;
     post.city = req.body.city;
-    post.date = Date.now();     //   need to store as time/date so can calculate how old a post is
+    post.date = Date.now();
     post.save(function(err) {
       if (err) {
         res.send(err);
       }
-      res.json({ message: 'travel tip successfully added!' });
+      console.log(post._id)
+      // res.json({ message: 'travel tip successfully added!' });
     });
-  });
+    console.log('new post', post)
+    db.City.findOne({name: post.city}, function(err, foundCity) {
+      if (err) {
+        console.log('post error at find one city');
+      } else {
+        console.log(foundCity.comments)
+        console.log(post._id)
+        foundCity.comments.push(post._id);
+        foundCity.save();
+        res.json(foundCity);
+      }
+    })
+  })
+
+  // below worked for embedded comments
+  // .post(function(req, res) {
+  //   var post = new db.Comment();
+  //   post.name = req.body.name;
+  //   post.title = req.body.title;
+  //   post.text = req.body.text;
+  //   post.city = req.body.city;
+  //   post.date = Date.now();     //   need to store as time/date so can calculate how old a post is
+  //   post.save(function(err) {
+  //     if (err) {
+  //       res.send(err);
+  //     }
+  //     res.json({ message: 'travel tip successfully added!' });
+  //   });
+  // });
 
 router.route('/comments/:id')
   .delete(function(req,res) {
