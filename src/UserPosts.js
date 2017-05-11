@@ -5,13 +5,15 @@ import React, { Component } from 'react'
 class UserPosts extends Component {
   constructor(props) {
     super(props);
-    this.state = {data: [] };
+    this.state = { data: [] };
   }
 
   render() {
     return (
       <div>
+        <Row className="user-posts">
           <p> user posts listing </p>
+        </Row>
       </div>
     )
   }

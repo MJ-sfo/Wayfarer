@@ -104,6 +104,7 @@ class PostIndiv extends Component {
     }
   }
 
+
   render() {
     return (
       <div>
@@ -114,7 +115,7 @@ class PostIndiv extends Component {
           <Col className="userinfo" sm={12} md={6}>
             <h5>Title: {this.props.title}</h5>
             <span id="username">{this.props.name}</span> says:
-            <br/><div className="userpost"> {this.props.text} </div>
+            <br/><div className="userpost truncate moreless"> {this.props.text} </div>
             <br/> <br/>
             <a className="edit-delete" onClick={ this.updatePost }> Edit </a> <span id="or">or</span>
             <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
