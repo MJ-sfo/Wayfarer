@@ -1,3 +1,5 @@
+@import url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
+
 body {
   margin: 0;
   padding: 0;
@@ -7,13 +9,12 @@ body {
 
 img.main-image {
   width: 100%;
-  z-index: 0;
   margin-top: 50px;
 }
 
 /*Styling for Navbar*/
 ul {
-  list-style: none
+  list-style: none;
 }
 
 ul.navbar li {
@@ -332,19 +333,78 @@ p {
 .myButtonCancel:active {
 	position:relative;
 	top:1px;
+
+/*Parallax section*/
+#section-1 {
+    z-index: 1;
+    color: #fff;
+    height: 100vh;
+}
+
+/*truncating review*/
+.truncate {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*.post-box {
   margin-top: 30px;
   border-style: solid;
   border-width: 2px;
+
 }
-.post-indiv {
-  margin-bottom: 10px;
-  border-style: dotted;
-  border-width: 2px;
-}
-.post-list {
-  border-style: solid;
-  border-color: green;
+/*#section-1 .row {
+    position: fixed;
 }*/
+
+.full-bg-img {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.parallax-layer-base {
+  transform: translateZ(0);
+  z-index: 4;
+}
+/*Parallax background*/
+#section-1 .parallax-layer-back {
+    /*background: url("https://i.imgur.com/89mnFA8.jpg")no-repeat center center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*Section with dummy content*/
+#section-2 {
+    z-index: 2;
+    position: relative;
+    background: #fff;
+    width: 100%;
+}
+
+img#top {
+  width: 100%
+}
+
+img#wayfarer {
+  width: 30%
+}
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  -webkit-perspective-origin-x: 100%;
+  perspective-origin-x: 100%;
+  padding: 0;
+  margin-top: 30px;
+  position: relative
+}

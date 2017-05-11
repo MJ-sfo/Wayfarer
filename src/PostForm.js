@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      title: '',
       text: '',
       date: '',
       showModal: false,
     };
-    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClose = this.onClose.bind(this);
@@ -17,23 +17,23 @@ class PostForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(`${this.state.name} said "${this.state.text}"`)
-    let name = this.state.name.trim();
+    console.log(`title: ${this.state.title} and text: ${this.state.text}`)
+    let title = this.state.title.trim();
     let text = this.state.text.trim();
     let date = Date.now();
-    if (! text || ! name) {
+    if (! text || ! title) {
       return;
     }
-    this.props.onPostSubmit({name: name, text: text, date:date})
-    this.setState({name: '', text: ''})
+    this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
+    this.setState({title: '', text: ''})
   }
 
   handleTextChange(e) {
     this.setState({ text: e.target.value });
   }
 
-  handleNameChange(e) {
-    this.setState({ name: e.target.value });
+  handleTitleChange(e) {
+    this.setState({ title: e.target.value });
   }
 
   onClose(){
