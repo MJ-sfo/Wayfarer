@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { firebase, auth } from './utils/firebase';
+import Profile from './Profile.js'
 
 class Layout extends Component {
   constructor(props) {
@@ -25,7 +26,15 @@ class Layout extends Component {
         console.log('Logged out');
         this.setState({ currentUser: null });
       }
-    });
+      // to get permanet object of user data
+      // this.setPStorage(this.localStorage);
+      // this.setPId('ticker');
+      // this.restorePState();
+      // this.setPState({
+      // userInfo: this.state});
+      // console.log("and user stored data is: ", this.setPState({
+      // userInfo: this.state}));
+    });   //  auth.onAuthStateChanged
   }
 
   loginButtonClicked(e) {
@@ -42,6 +51,19 @@ class Layout extends Component {
   }
 
   render() {
+    var user = this.state.currentUser;
+
+    // var kids = React.Children.map(this.props.children, function (child) {
+    //   return React.cloneElement(child, {
+    //     user: this.state.currentUser
+    //   })
+    // })
+      //
+    // console.log("sending user data via render/children/clone/children ", kids);
+    // console.log("sending user data via render/children/clone/user ", user);
+
+    // return user;
+    // console.log('trying to send state to children', user);
     return (
       <div>
         <Navbar

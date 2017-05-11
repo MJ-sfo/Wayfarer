@@ -20,6 +20,8 @@ class Profile extends Component {
               <Row>
                 <Col sm={12} md={4}>
                   <img src=""/>
+                    user profile ffrom Layout
+                    <div></div>
                   <UserPosts />
                 </Col>
               </Row>

@@ -63,7 +63,7 @@ class PostIndiv extends Component {
 
   timePassed(post_time) {  // this function shows how long ago a post was made
     let now = new Date().getTime() ; //  time right now
-    post_time = Date.parse(post_time);  // converts text of date to number
+    // post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
     if ( Math.floor((difference) /(60*60*24*30) ) == 1 ) {
       return Math.floor((difference) /(60*60*24*30) ) + " month";
