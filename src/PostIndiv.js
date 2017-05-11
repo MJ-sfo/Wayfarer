@@ -109,42 +109,55 @@ class PostIndiv extends Component {
     return (
       <div>
         <Row className="show-grid post">
-          <Col className="userimage" sm={12} md={2}>
-            <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg" alt="placeholder"/>
+          <Col className="userimage" sm={12} md={3}>
+            <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
+
           </Col>
-          <Col className="userinfo" sm={12} md={6}>
-            <h5>Title: {this.props.title}</h5>
+          <Col className="userinfo" sm={12} md={8}>
+            <h5 className="usertitle">Title: {this.props.title}</h5>
             <span id="username">{this.props.name}</span> says:
             <br/><div className="userpost truncate moreless"> {this.props.text} </div>
             <br/> <br/>
-            <a className="edit-delete" onClick={ this.updatePost }> Edit </a> <span id="or">or</span>
-            <a className="edit-delete" onClick={ this.deletePost }> Delete </a>
+            <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
+            <a className="myButton" id="close" onClick={ this.deletePost }> Delete </a>
           </Col>
-          <Col className="userinfo" sm={12} md={2}>
+          <Col className="userinfo" sm={12} md={1}>
             <div className="dateposted">Posted: {this.timePassed(this.props.date)} ago</div>
           </Col>
         </Row>
 
           <Row className="show-grid-buttons">
-            <Col sm={12} md={3} mdOffset={2}>
+
               { (this.state.toBeUpdated)
                 ? (<form onSubmit={ this.handlePostUpdate }>
-                    <input
+
+                    <label className="col-md-2 col-sm-3 col-xs-4 control-label" for="title" >Title</label>
+                    <textarea
+                      id="title"
+                      className="form-control input-lg"
+                      rows='1'
                       type='text'
-                      placeholder='Update Title...'
-                      value={ this.state.title }
-                      onChange={ this.handleTitleChange } /> <span>
-                    <input
+                      placeholder={ this.state.title }
+                      value={ this.setState.title }
+                      onChange={ this.handleTitleChange }></textarea><span>
+                    <label className="col-md-2 col-sm-3 col-xs-4 control-label" for="textarea1">Text</label>
+                    <textarea
+                      id="textarea1"
+                      className="form-control input-lg"
+                      rows='5'
                       type='text'
-                      placeholder='Update your comment...'
+                      placeholder={ this.props.text }
                       value={ this.state.text }
-                      onChange={ this.handleTextChange } /> </span> <span>
+                      onChange={ this.handleTextChange }></textarea> </span> <span>
                     <input
+                      className="myButton"
+                      id="open"
                       type='submit'
                       value='Update' /> </span>
+
                   </form>)
                 : null}
-            </Col>
+
           </Row>
 
         <hr/>

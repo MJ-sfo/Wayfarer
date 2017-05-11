@@ -41,10 +41,16 @@ class Navbar extends Component {
       <ul className="navbar">
         <li id="nav-wayfarer"><a id="wayfarer" href="/"><strong>Wayfarer</strong></a></li>
         {this.sessionButton()}
-        <li className="navtext"><a id="cities" href="/cities" title="Cities"
-          onMouseEnter={ this.handleOpen }
-          onMouseLeave={ this.handleClose }
-          open={ this.state.isOpen }> Cities <span className="caret"></span></a> </li>
+        <div className="dropdown">
+        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <li className="navtext"><a id="cities" href="/cities" title="Cities">Cities </a><span className="caret"></span> </li>
+        </a>
+        <ul className="dropdown-content">
+          <li> <a href="/cities/1">San Francisco</a></li>
+          <li> <a href="/cities/london">London</a></li>
+          <li> <a href="/cities/gibraltar">Gibraltar</a></li>
+        </ul>
+        </div>
       </ul>
     );
   }
