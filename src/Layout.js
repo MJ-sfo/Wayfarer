@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { firebase, auth } from './utils/firebase';
+import React, { Component } from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
+import { firebase, auth } from './utils/firebase'
 
 class Layout extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class Layout extends Component {
           loginButtonClicked={ this.loginButtonClicked }
           logoutButtonClicked={ this.logoutButtonClicked }/>
 
-        {React.cloneElement(this.props.children,{currentUser: this.state.currentUser})} 
+        {React.cloneElement(this.props.children,{currentUser: this.state.currentUser})}
         <Footer />
       </div>
     );

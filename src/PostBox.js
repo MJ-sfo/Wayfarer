@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import $ from 'jquery-ajax';
-import {Grid, Row, Col} from 'react-bootstrap';
-import PostList from './PostList';
-import PostForm from './PostForm';
+import React, { Component } from 'react'
+import $ from 'jquery-ajax'
+import {Grid, Row, Col} from 'react-bootstrap'
+import PostList from './PostList'
+import PostForm from './PostForm'
 
 class PostBox extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class PostBox extends Component {
       url: this.props.url
     })
     .then(res => {
-      this.setState({data: res})
+      this.setState({data: res.comments})
     })
   }
 
@@ -29,13 +29,12 @@ class PostBox extends Component {
     setInterval(this.loadPostsFromServer, this.props.pollInterval)
   }
 
-
   handlePostSubmit(post) {
     let posts = this.state.data;
     console.log('submit success!');
     $.ajax({
       method: 'POST',
-      url: this.props.url,
+      url: 'http://localhost:3001/api/comments',
       data: post
     })
     .then((res) => {

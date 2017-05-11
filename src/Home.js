@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
-import {Link } from 'react-router';
+import React, { Component } from 'react'
+import {Grid, Row, Col} from 'react-bootstrap'
+import {Link } from 'react-router'
 import mainImage from '../public/images/base.jpg'
 import traveltop2 from '../public/images/traveltop2.jpg'
 import wayfarer from '../public/images/wayfarer.png'

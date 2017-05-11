@@ -102,15 +102,25 @@ router.route('/comments/:id')
     })
   })
 
-  router.route('/cities')
-    .get(function(req, res) {
-      db.City.find(function(err, cities) {
-        if (err) {
-          res.send(err);
-        }
-        res.json(cities);
-      });
-    })
+router.route('/cities')
+  .get(function(req, res) {
+    db.City.find(function(err, cities) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(cities);
+    });
+  })
+
+router.route('/cities/:id')
+  .get(function(req, res) {
+    db.City.findById(req.params.id, function(err, city) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(city);
+    });
+  })
 
 //start server
 app.listen(port, function() {

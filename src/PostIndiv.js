@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
-import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert';
+import React, { Component } from 'react'
+import {Grid, Row, Col} from 'react-bootstrap'
+import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 // import marked from 'marked' - do we need this? (MERN crud lab used this rawMarkup)
 

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Citylist from './Citylist';
-import citiesImage from '../public/images/suitcase.jpg';
+import React, { Component } from 'react'
+import Citylist from './Citylist'
+import citiesImage from '../public/images/suitcase.jpg'
 
 // this is when Route path='/cities' (index.js)
 class Cities extends Component {

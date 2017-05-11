@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PostIndiv from './PostIndiv'
 
 class PostList extends Component {
