@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import $ from 'jquery-ajax';
-import {Grid, Row, Col} from 'react-bootstrap';
-import PostList from './PostList';
-import PostForm from './PostForm';
+import React, { Component } from 'react'
+import $ from 'jquery-ajax'
+import {Grid, Row, Col} from 'react-bootstrap'
+import PostList from './PostList'
+import PostForm from './PostForm'
 
 class PostBox extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class PostBox extends Component {
       url: this.props.url
     })
     .then(res => {
-      this.setState({data: res})
+      this.setState({data: res.comments})
     })
   }
 
@@ -29,19 +29,18 @@ class PostBox extends Component {
     setInterval(this.loadPostsFromServer, this.props.pollInterval)
   }
 
-
   handlePostSubmit(post) {
     let posts = this.state.data;
-    console.log('submit success!');
+    console.log('incoming new post is', post, 'city is', post.city)
     $.ajax({
       method: 'POST',
-      url: this.props.url,
+      url: 'http://localhost:3001/api/comments/',
       data: post
     })
     .then((res) => {
-      let newPosts = posts.concat(res)
-      this.setState({ data: newPosts });
-      console.log('submit success!')
+      console.log(res)
+      // let newPosts = posts.concat(res)
+      // this.setState({ data: newPosts });
     }, (err) => {
       console.error('post error', err);
     });
@@ -50,7 +49,7 @@ class PostBox extends Component {
   handlePostDelete(id) {
     $.ajax({
       method: 'delete',
-      url: `${this.props.url}/${id}`
+      url: `http://localhost:3001/api/comments/${id}`
     })
     .then( (res) => {
       console.log('post deleted!')
@@ -62,7 +61,7 @@ class PostBox extends Component {
   handlePostUpdate(id, post) {
     $.ajax({
       method: 'put',
-      url: `${this.props.url}/${id}`,
+      url: `http://localhost:3001/api/comments/${id}`,
       data: post
     })
     .then( (res) => {
@@ -78,9 +77,12 @@ class PostBox extends Component {
         <Grid>
           <Row className="post-box">
             <Col sm={12} md={8} mdOffset={2}><br/>
-              <PostForm onPostSubmit={this.handlePostSubmit}/>
+              <PostForm
+                onPostSubmit={this.handlePostSubmit}
+                cityName={this.props.cityName}/>
               <PostList
                 data={this.state.data}
+                cityName={this.props.cityName}
                 onPostDelete={this.handlePostDelete}
                 onPostUpdate={this.handlePostUpdate}/>
             </Col>

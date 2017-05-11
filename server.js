@@ -61,20 +61,50 @@ router.route('/comments')
       res.json(comments);
     });
   })
-  .post(function(req, res) {
-    console.log('post server route')
+  .post(function(req,res) {
     var post = new db.Comment();
     post.name = req.body.name;
     post.title = req.body.title;
     post.text = req.body.text;
-    post.date = Date.now();     //   need to store as time/date so can calculate how old a post is
-    post.save(function(err) {
+    post.city = req.body.city;
+    post.date = Date.now();
+    post.save();
+      // function(err) {
+      // if (err) {
+      //   res.send(err);
+      // } res.json({ message: 'travel tip successfully added!' })
+      // "can't set headers after they're sent"
+      // console.log(post._id)
+      // res.json({ message: 'travel tip successfully added!' });
+    // });
+    db.City.findOne({name: post.city}, function(err, foundCity) {
       if (err) {
-        res.send(err);
+        console.log('post error at find one city');
+      } else {
+        console.log(foundCity.comments)
+        console.log(post._id)
+        foundCity.comments.push(post._id);
+        foundCity.save();
+        res.json(foundCity);
       }
-      res.json({ message: 'travel tip successfully added!' });
-    });
-  });
+    })
+  })
+
+  // below worked for embedded comments
+  // .post(function(req, res) {
+  //   var post = new db.Comment();
+  //   post.name = req.body.name;
+  //   post.title = req.body.title;
+  //   post.text = req.body.text;
+  //   post.city = req.body.city;
+  //   post.date = Date.now();     //   need to store as time/date so can calculate how old a post is
+  //   post.save(function(err) {
+  //     if (err) {
+  //       res.send(err);
+  //     }
+  //     res.json({ message: 'travel tip successfully added!' });
+  //   });
+  // });
 
 router.route('/comments/:id')
   .delete(function(req,res) {
@@ -101,6 +131,44 @@ router.route('/comments/:id')
       })
     })
   })
+
+// get all cities
+router.route('/cities')
+  .get(function(req, res) {
+    db.City.find({})
+      .populate('comments')
+      .exec(function(err, cities) {
+        if (err) {
+          res.send(err);
+        }
+        res.json(cities);
+      });
+    })
+
+// // get specific city info
+// router.route('/cities/:id')
+//   .get(function(req, res) {
+//     db.City.findById(req.params.id, function(err, city) {
+//       if (err) {
+//         res.send(err);
+//       }
+//       res.json(city);
+//     });
+//   })
+
+// get specific city info
+router.route('/cities/:id')
+  .get(function(req, res) {
+    db.City.findById(req.params.id)
+      .populate('comments')
+      .exec(function(err, city) {
+        if (err) {
+          res.send(err);
+        }
+        res.json(city);
+      });
+    })
+
 
 //start server
 app.listen(port, function() {
