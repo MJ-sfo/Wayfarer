@@ -31,7 +31,7 @@ class Home extends Component {
             </Col>
           </Row>
         </Grid>
-      
+
         <img className="main-image wow fadeInDown" data-wow-delay="0.2s" src={mainImage} alt={"mainImage"}/>
         <div className="parallax"> {/* main parallax wrapper*/}
             <div id="section-1" className="parallax-section"> {/* first section */}
@@ -46,8 +46,8 @@ class Home extends Component {
             </div> {/* end first section */}
 
           <div className="section-2">
-
-          
+          </div>
+        </div>
       </div>
     );
   }

@@ -342,6 +342,11 @@ p {
     height: 100vh;
 }
 
+a#cities {
+  margin: 0;
+  padding: 0
+}
+
 /*truncating review*/
 .truncate {
   width: 300px;
@@ -417,7 +422,7 @@ div.profile-contents {
 
 /*CSS for Profile Page */
 div.user-post-container {
-  box-shadow: 1px 1px 2px 2px #888888
+  box-shadow: 1px 2px 2px 2px #888888
 }
 
 h5.user-post, title {
