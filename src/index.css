@@ -333,6 +333,7 @@ p {
 .myButtonCancel:active {
 	position:relative;
 	top:1px;
+}
 
 /*Parallax section*/
 #section-1 {
