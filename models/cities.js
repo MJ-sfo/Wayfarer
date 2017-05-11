@@ -10,7 +10,10 @@ var CitySchema = new Schema({
   description: String,
   country: String,
   image: String,
-  comments: [Comment.schema]
+  comments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Comment'
+  }]
 });
 
 // this exports a value, not objectx

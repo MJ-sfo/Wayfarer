@@ -95,20 +95,22 @@ db.Comment.remove({}, function(err, comments) {
         var city = new db.City({
           name: cityData.name,
           country: cityData.country,
-          comments: cityData.comments,
           description: cityData.description,
           image: cityData.image
         });
-        db.Comment.find({city: cityData.name}, function(err, foundComment) {
-          if (err) {
-            console.log('err with db.comment.findone', err)
-          }
-          city.comments = foundComment;
-          city.save(function(err, savedCity) {
-            console.log('city with embedded comments successfully saved')
+        db.Comment.find({city: cityData.name})
+          .populate('comments')
+          .exec (function(err, foundComments) {
+            if (err) {
+              console.log('err with db.comment.find', err)
+            } else {
+              city.comments = foundComments;
+              city.save(function(err, savedCity) {
+                console.log('city with ref comments successfully saved')
+              })
+            }
           })
         })
       })
     })
   })
-})
