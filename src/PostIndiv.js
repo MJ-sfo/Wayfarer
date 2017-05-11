@@ -58,6 +58,7 @@ class PostIndiv extends Component {
   handleDeletePost() {
     let id = this.props.uniqueID;
     this.props.onPostDelete(id);
+    this.setState({ showDialog: !this.state.showDialog})
     console.log('post was deleted through modal');
   }
 

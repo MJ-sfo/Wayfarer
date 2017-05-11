@@ -26,7 +26,7 @@ class PostBox extends Component {
 
   componentDidMount() {
     this.loadPostsFromServer();
-    // setInterval(this.loadPostsFromServer, this.props.pollInterval)
+    setInterval(this.loadPostsFromServer, this.props.pollInterval)
   }
 
   handlePostSubmit(post) {
@@ -34,12 +34,13 @@ class PostBox extends Component {
     console.log('incoming new post is', post, 'city is', post.city)
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3001/api/cities',
+      url: 'http://localhost:3001/api/comments/',
       data: post
     })
     .then((res) => {
-      let newPosts = posts.concat(res)
-      this.setState({ data: newPosts });
+      console.log(res)
+      // let newPosts = posts.concat(res)
+      // this.setState({ data: newPosts });
     }, (err) => {
       console.error('post error', err);
     });

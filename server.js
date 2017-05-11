@@ -68,14 +68,15 @@ router.route('/comments')
     post.text = req.body.text;
     post.city = req.body.city;
     post.date = Date.now();
-    post.save(function(err) {
-      if (err) {
-        res.send(err);
-      }
-      console.log(post._id)
+    post.save();
+      // function(err) {
+      // if (err) {
+      //   res.send(err);
+      // } res.json({ message: 'travel tip successfully added!' })
+      // "can't set headers after they're sent"
+      // console.log(post._id)
       // res.json({ message: 'travel tip successfully added!' });
-    });
-    console.log('new post', post)
+    // });
     db.City.findOne({name: post.city}, function(err, foundCity) {
       if (err) {
         console.log('post error at find one city');
