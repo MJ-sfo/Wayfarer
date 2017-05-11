@@ -8,6 +8,7 @@ import Layout from './Layout'
 import './index.css'
 import Profile from './Profile'
 import $ from 'jquery'
+import Comments from './Comment'
 
 ReactDOM.render(
   <Layout>
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Route path='/cities' component={Cities} />
       <Route path='/cities/:id' component={City} />
       <Route path='/profile' component={Profile} />
+      <Route path='/cities/comment/:id' component={Comments} />
     </Router>
   </Layout>,
   document.getElementById('root')
@@ -68,4 +70,3 @@ ReactDOM.render(
 //
 //   /* end ready */
 // });
-

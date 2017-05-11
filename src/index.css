@@ -355,6 +355,14 @@ p {
   text-overflow: ellipsis;
 }
 
+.one-comment {
+  display: inline-block;
+  margin-top: 300px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: monaco;
+}
+
 /*.post-box {
   margin-top: 30px;
   border-style: solid;
