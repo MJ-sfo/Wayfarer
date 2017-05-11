@@ -102,6 +102,16 @@ router.route('/comments/:id')
     })
   })
 
+  router.route('/cities')
+    .get(function(req, res) {
+      db.City.find(function(err, cities) {
+        if (err) {
+          res.send(err);
+        }
+        res.json(cities);
+      });
+    })
+
 //start server
 app.listen(port, function() {
   console.log(`api running on port ${port}`);

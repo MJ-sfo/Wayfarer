@@ -19,3 +19,9 @@ ReactDOM.render(
   </Layout>,
   document.getElementById('root')
 );
+
+
+// react router route params
+//props.params
+// in route path='/cities/:id' component={city}
+// in city ... {props.params.id}

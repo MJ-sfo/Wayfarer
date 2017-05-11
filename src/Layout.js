@@ -8,9 +8,6 @@ class Layout extends Component {
     super(props);
     this.state = {
       currentUser: null,
-      uid: '',
-      displayName: '',
-      photoURL: ''
     }
   }
 
@@ -42,13 +39,15 @@ class Layout extends Component {
   }
 
   render() {
+    console.log(this.props.children)
     return (
       <div>
         <Navbar
           currentUser={ this.state.currentUser }
           loginButtonClicked={ this.loginButtonClicked }
           logoutButtonClicked={ this.logoutButtonClicked }/>
-        {this.props.children}
+
+        {React.cloneElement(this.props.children,{currentUser: this.state.currentUser})} 
         <Footer />
       </div>
     );
@@ -56,3 +55,9 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+
+//   {this.props.children}
+// https://jaketrent.com/post/send-props-to-children-react/
+// http://stackoverflow.com/questions/38403321/pass-this-state-with-this-props-children
+//https://github.com/ReactTraining/react-router/issues/1531

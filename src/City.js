@@ -19,3 +19,6 @@ class City extends Component {
 }
 
 export default City;
+
+
+//component will mount in/near ajax call for city

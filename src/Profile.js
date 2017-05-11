@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import $ from 'jquery-ajax';
 import {Grid, Row, Col} from 'react-bootstrap';
-import PostForm from './PostForm'
-import PostList from './PostList'
 import UserPosts from './UserPosts'
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {data: [] };
-  }
 
   render() {
     return (
@@ -20,6 +14,7 @@ class Profile extends Component {
               <Row>
                 <Col sm={12} md={4}>
                   <img src=""/>
+                    user is: {this.props.currentUser}
                   <UserPosts />
                 </Col>
               </Row>
