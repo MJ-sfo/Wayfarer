@@ -28,17 +28,16 @@ class City extends Component {
     var cityName = this.state.data.name
     var cityImage = this.state.data.image
     console.log({cityName})
+    console.log('props are', this.props.currentUser)
     return (
       <div>
         <h2>{cityName}</h2>
         <img className="city" src={cityImage} alt="sf-city"/>
-
-      <PostBox
-        url={`http://localhost:3001/api/cities/${this.props.params.id}`}
-        pollInterval={2000}
-        cityName={cityName}
-        data={this.state.data}
-        />
+        <PostBox
+          url={`http://localhost:3001/api/cities/${this.props.params.id}`}
+          pollInterval={2000}
+          cityName={cityName}
+          data={this.state.data} />
       </div>
     );
   }

@@ -132,6 +132,17 @@ router.route('/comments/:id')
     })
   })
 
+// get comments from one user name
+router.route('/comments/:name')
+  .get(function(req, res) {
+    db.Comment.find({name: req.params.name}, function(err, comments) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(comments);
+    });
+  })
+
 // get all cities
 router.route('/cities')
   .get(function(req, res) {
