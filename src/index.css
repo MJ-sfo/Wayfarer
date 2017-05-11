@@ -1,9 +1,7 @@
-@import url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
-
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans';
   text-align: center
 }
 
@@ -35,7 +33,6 @@ ul.navbar {
   text-align: right;
   font-size: 20px;
   line-height: 0;
-  font-family: "Open Sans";
   padding: 0;
   text-decoration: none;
 }
@@ -134,7 +131,6 @@ h1.header {
 }
 
 h3.explore {
-  font-family: 'Open Sans';
   font-size: 80px;
   font-weight: bolder;
   letter-spacing: 5px;
@@ -187,7 +183,6 @@ img.city {
 }*/
 
 div.post {
-  font-family: 'Open Sans';
   text-align: left;
   position: relative
 }
@@ -399,7 +394,7 @@ img#top {
 }
 
 img#wayfarer {
-  width: 30%
+  width: 30%;
 }
 
 .parallax {
@@ -413,4 +408,45 @@ img#wayfarer {
   padding: 0;
   margin-top: 30px;
   position: relative
+}
+
+div.profile-contents {
+  margin-top: 80px;
+}
+
+
+/*CSS for Profile Page */
+div.user-post-container {
+  box-shadow: 1px 1px 2px 2px #888888
+}
+
+h5.user-post, title {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+h3.user-post-header {
+  margin-bottom: 40px;
+}
+
+div.userpost, truncate, moreless {
+  font-size: 15px;
+  font-style: italic;
+}
+
+p.profile-name {
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+img.profile-image {
+  margin-top: 30px
+}
+
+p.user-post, city {
+  margin-top: 10px;
+  padding: 0px;
+  padding-right: 10px;
+  text-align: right;
 }

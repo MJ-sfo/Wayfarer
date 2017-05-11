@@ -85,6 +85,24 @@ commentsList.push({
   city: 'Gibraltar'
   });
 
+  //
+commentsList.push({
+  name: 'Sejin',
+  text: 'Big Ben! Fish & Chips! EYE',
+  date: '149438223369',
+  uid: '3',
+  title: 'My favorite things to do in London',
+  city: 'London'
+  });
+commentsList.push({
+  name: 'Sejin',
+  text: 'Eh, it was alright. Wouldn\'t go again.',
+  date: '1494380080369',
+  uid: '3',
+  title: 'Meh',
+  city: 'Gibraltar'
+  });
+
 
 db.Comment.remove({}, function(err, comments) {
   console.log('removed all comments');

@@ -5,9 +5,8 @@ import Home from './Home'
 import Cities from './Cities'
 import City from './City'
 import Layout from './Layout'
-import './index.css'
 import Profile from './Profile'
-import $ from 'jquery'
+import './index.css'
 
 ReactDOM.render(
   <Layout>
@@ -68,4 +67,3 @@ ReactDOM.render(
 //
 //   /* end ready */
 // });
-

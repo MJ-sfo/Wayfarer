@@ -16,7 +16,6 @@ class Layout extends Component {
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         console.log('Logged in:', currentUser);
-        console.log('uid is', currentUser.uid, 'name is', currentUser.displayName)
         this.setState({ currentUser });
       } else {
         console.log('Logged out');
@@ -39,15 +38,18 @@ class Layout extends Component {
   }
 
   render() {
-    console.log(this.props.children)
+    // var that = this;
+    // var childrenWithProps = React.Children.map(this.props.children, function(child){
+    //   return React.cloneElement(child, {currentUser: that.state.currentUser}) {childrenWithProps}
+    // })
+    console.log('layout props', this.props.children)
     return (
       <div>
         <Navbar
           currentUser={ this.state.currentUser }
           loginButtonClicked={ this.loginButtonClicked }
           logoutButtonClicked={ this.logoutButtonClicked }/>
-
-        {React.cloneElement(this.props.children,{currentUser: this.state.currentUser})}
+        {this.props.children && React.cloneElement(this.props.children, {currentUser: this.state.currentUser})}
         <Footer />
       </div>
     );
@@ -55,6 +57,8 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+//{currentUser: this.state.currentUser}
 
 
 //   {this.props.children}
