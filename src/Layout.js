@@ -18,6 +18,14 @@ class Layout extends Component {
   // communicates with firebase, before stuff mounts on page
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
+      // to move currentUser to child container
+      // currentUser.preventDefault();
+      // this.props.addTodoItem(this.state.todoInput);
+      // addTodo: currentUser.displayName;
+        // currentUser.displayName
+
+      // this.setState({todoInput: ""});
+
       if (currentUser) {
         console.log('Logged in:', currentUser);
         console.log('uid is', currentUser.uid, 'name is', currentUser.displayName)
@@ -51,8 +59,9 @@ class Layout extends Component {
   }
 
   render() {
-    var user = this.state.currentUser;
-
+    // var user = this.state.currentUser;
+    // console.log("rendering this.addTodo.bind(this)", this.addTodo.bind(this));
+    // <Profile addToDo={this.addTodo.bind(this)} />
     // var kids = React.Children.map(this.props.children, function (child) {
     //   return React.cloneElement(child, {
     //     user: this.state.currentUser
@@ -66,6 +75,7 @@ class Layout extends Component {
     // console.log('trying to send state to children', user);
     return (
       <div>
+
         <Navbar
           currentUser={ this.state.currentUser }
           loginButtonClicked={ this.loginButtonClicked }
@@ -73,8 +83,44 @@ class Layout extends Component {
         {this.props.children}
         <Footer />
       </div>
-    );
+    );  // return (
   }
 }
 
+// next i am trying https://jaketrent.com/post/send-props-to-children-react/
+
+// <label>
+//   <input type="object" value={props.value} name={props.name} />
+//   {props.label}
+// </label>
+
+function renderChildren(props) {
+  return React.Children.map(props.children, child => {
+    if (child.type === Layout)
+      return React.cloneElement(child, {
+        name: props.name
+      })
+    else
+      return child
+  })
+}
+
+function RadioGroup(props) {
+  return (
+    <div class="radio-group">
+      {renderChildren(props)}
+    </div>
+  )
+}
+
+function WhereImUsingRadioGroups() {
+  return (
+    <RadioGroup name="blizzard-games">
+      <Layout label="Warcraft 2" value="wc2" />
+      <Layout label="Warcraft 3" value="wc3" />
+      <Layout label="Starcraft 1" value="sc1" />
+      <Layout label="Starcraft 2" value="sc2" />
+    </RadioGroup>
+  )
+}
 export default Layout;

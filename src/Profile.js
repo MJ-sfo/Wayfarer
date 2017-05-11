@@ -9,6 +9,7 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {data: [] };
+    // this.props.addToDo(newTodo);
   }
 
   render() {
