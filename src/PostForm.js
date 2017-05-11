@@ -43,23 +43,25 @@ class PostForm extends Component {
   render() {
     return (
       <div className="post-form">
-        <a onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </a>
+        <button type="button" className="btn btn-outline-success" onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </button>
         { (this.state.showModal)
           ? (<form className="form" onSubmit={ this.handleSubmit }>
               <input
                 type='text'
-                placeholder='Update name...'
+                placeholder='Title'
                 value={ this.state.name }
                 onChange={ this.handleNameChange } />
               <input
                 type='text'
-                placeholder='Update your comment...'
+                placeholder='Text'
                 value={ this.state.text }
                 onChange={ this.handleTextChange } />
               <input
+                className="myButton"
                 type='submit'
                 value='Update' />
-              <a onClick={()=> this.onClose}> Cancel </a>
+              <span> </span>
+              <a className="myButtonCancel" onClick={()=> this.onClose}> Cancel </a>
             </form>)
           : null}
       </div>

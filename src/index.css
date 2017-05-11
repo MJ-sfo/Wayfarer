@@ -146,9 +146,9 @@ img.city {
   opacity: 1
 }
 
-button.edit-delete {
+/*button.edit-delete {
   margin-right: 5px;
-}
+}*/
 
 div.post {
   font-family: 'Open Sans';
@@ -166,8 +166,13 @@ span#username {
   font-size: 20px;
 }
 
+h5.usertitle {
+  overflow-wrap: break-word;
+}
+
 div.userpost {
   margin-left: 20px;
+  overflow-wrap: break-word;
 }
 
 div.dateposted {
@@ -232,6 +237,71 @@ p {
 
 .explore {
   text-decoration: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:7px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.myButton:hover {
+	background-color:#378de5;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButtonCancel {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5.5px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+  position: relative;
+  top: 1px;
+}
+.myButtonCancel:hover {
+	background-color:#378de5;
+}
+.myButtonCancel:active {
+	position:relative;
+	top:1px;
 }
 
 /*.post-box {
