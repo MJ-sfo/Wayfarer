@@ -25,15 +25,22 @@ class City extends Component {
   componentDidMount() {
     this.loadCityFromServer();
   }
+
   render() {
+    var cityName = this.state.data.name
+    var cityImage = this.state.data.image
+    console.log({cityName})
     return (
       <div>
-        <h2>{this.state.data.name}</h2>
-        <img className="city" src={this.state.data.image} alt="sf-city"/>
+        <h2>{cityName}</h2>
+        <img className="city" src={cityImage} alt="sf-city"/>
 
       <PostBox
         url={`http://localhost:3001/api/cities/${this.props.params.id}`}
-        pollInterval={2000}/>
+        pollInterval={2000}
+        cityName={cityName}
+        data={this.state.data}
+        />
       </div>
     );
   }

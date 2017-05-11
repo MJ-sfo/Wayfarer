@@ -14,8 +14,8 @@ class Home extends Component {
             <div id="section-1" className="parallax-section"> {/* first section */}
                 <div className="parallax-layer parallax-layer-base">{/*parallax content*/}
                     <div className="full-bg-img flex-center">{/* container to center content*/}
-                      <img className="main-image" id="wayfarer" src={wayfarer}/>
-                      <img id="top" src={traveltop2}/>
+                      <img className="main-image" id="wayfarer" alt="" src={wayfarer}/>
+                      <img id="top" alt="" src={traveltop2}/>
                     </div>
                 </div>
                 <div className="parallax-layer parallax-layer-back">

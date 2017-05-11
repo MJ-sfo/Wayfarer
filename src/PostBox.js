@@ -26,12 +26,12 @@ class PostBox extends Component {
 
   componentDidMount() {
     this.loadPostsFromServer();
-    setInterval(this.loadPostsFromServer, this.props.pollInterval)
+    // setInterval(this.loadPostsFromServer, this.props.pollInterval)
   }
 
   handlePostSubmit(post) {
     let posts = this.state.data;
-    console.log('submit success!');
+    console.log('incoming new post is', post, 'city is', post.city)
     $.ajax({
       method: 'POST',
       url: 'http://localhost:3001/api/comments',
@@ -40,7 +40,6 @@ class PostBox extends Component {
     .then((res) => {
       let newPosts = posts.concat(res)
       this.setState({ data: newPosts });
-      console.log('submit success!')
     }, (err) => {
       console.error('post error', err);
     });
@@ -49,7 +48,7 @@ class PostBox extends Component {
   handlePostDelete(id) {
     $.ajax({
       method: 'delete',
-      url: `${this.props.url}/${id}`
+      url: `http://localhost:3001/api/comments/${id}`
     })
     .then( (res) => {
       console.log('post deleted!')
@@ -61,7 +60,7 @@ class PostBox extends Component {
   handlePostUpdate(id, post) {
     $.ajax({
       method: 'put',
-      url: `${this.props.url}/${id}`,
+      url: `http://localhost:3001/api/comments/${id}`,
       data: post
     })
     .then( (res) => {
@@ -77,9 +76,12 @@ class PostBox extends Component {
         <Grid>
           <Row className="post-box">
             <Col sm={12} md={8} mdOffset={2}><br/>
-              <PostForm onPostSubmit={this.handlePostSubmit}/>
+              <PostForm
+                onPostSubmit={this.handlePostSubmit}
+                cityName={this.props.cityName}/>
               <PostList
                 data={this.state.data}
+                cityName={this.props.cityName}
                 onPostDelete={this.handlePostDelete}
                 onPostUpdate={this.handlePostUpdate}/>
             </Col>

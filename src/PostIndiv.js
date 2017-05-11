@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import {Grid, Row, Col} from 'react-bootstrap'
-import ReactConfirmAlert, { confirmAlert } from 'react-confirm-alert'
+import {Row, Col} from 'react-bootstrap'
+import ReactConfirmAlert from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 // import marked from 'marked' - do we need this? (MERN crud lab used this rawMarkup)
 
@@ -65,37 +65,37 @@ class PostIndiv extends Component {
     let now = new Date().getTime() ; //  time right now
     // post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
-    if ( Math.floor((difference) /(60*60*24*30) ) == 1 ) {
+    if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
       return Math.floor((difference) /(60*60*24*30) ) + " month";
     }
     else if ( Math.floor((difference) /(60*60*24*30) ) > 0 ) {
       return Math.floor((difference) /(60*60*24*30) ) + " months";
     }
-    else if ( Math.floor((difference) /(60*60*24*7) ) == 1 ) {
+    else if ( Math.floor((difference) /(60*60*24*7) ) === 1 ) {
       return Math.floor((difference) /(60*60*24*7) ) + " week";
     }
     else if ( Math.floor((difference) /(60*60*24*7) ) > 0 ) {
       return Math.floor((difference) /(60*60*24*7) ) + " weeks";
     }
-    else if ( Math.floor((difference) /(60*60*24) ) == 1 ) {
+    else if ( Math.floor((difference) /(60*60*24) ) === 1 ) {
       return Math.floor((difference) /(60*60*24) ) + " day";
     }
     else if ( Math.floor((difference) /(60*60*24) ) > 0 ) {
       return Math.floor((difference) /(60*60*24) ) + " days";
     }
-    else if ( Math.floor((difference) /(60*60) ) == 1 ) {
+    else if ( Math.floor((difference) /(60*60) ) === 1 ) {
       return Math.floor((difference) /(60*60)  ) + " hour";
     }
     else if ( Math.floor((difference) /(60*60) ) > 0 ) {
       return Math.floor((difference) /(60*60)  ) + " hours";
     }
-    else if ( Math.floor((difference) /60 ) == 1 ) {
+    else if ( Math.floor((difference) /60 ) === 1 ) {
       return Math.floor((difference) /60 ) + " minute";
     }
     else if ( Math.floor((difference) /60 ) > 0 ) {
       return Math.floor((difference) /60 ) + " minutes";
     }
-    else if ( Math.floor((difference)) == 1 ) {
+    else if ( Math.floor((difference)) === 1 ) {
       return Math.floor((difference) /60 ) + " second";
     }
     else {
@@ -108,7 +108,7 @@ class PostIndiv extends Component {
       <div>
         <Row className="show-grid post">
           <Col className="userimage" sm={12} md={2}>
-            <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
+            <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg" alt="placeholder"/>
           </Col>
           <Col className="userinfo" sm={12} md={6}>
             <h5>Title: {this.props.title}</h5>

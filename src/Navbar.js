@@ -18,7 +18,7 @@ class Navbar extends Component {
 
   sessionButton() {
     if (!this.props.currentUser ) {
-      return (<li className="navtext"><a id="login" onClick= {this.props.loginButtonClicked}> <span class="glyphicon glyphicon-log-in"></span>Log In</a></li>);
+      return (<li className="navtext"><a id="login" onClick={this.props.loginButtonClicked}> <span class="glyphicon glyphicon-log-in"></span>Log In</a></li>);
     } else {
       return (
         <li className="navtext">
@@ -42,8 +42,8 @@ class Navbar extends Component {
         <li id="nav-wayfarer"><a id="wayfarer" href="/"><strong>Wayfarer</strong></a></li>
         {this.sessionButton()}
         <li className="navtext"><a id="cities" href="/cities" title="Cities"
-          onMouseEnter = { this.handleOpen }
-          onMouseLeave = { this.handleClose }
+          onMouseEnter={ this.handleOpen }
+          onMouseLeave={ this.handleClose }
           open={ this.state.isOpen }> Cities <span className="caret"></span></a> </li>
       </ul>
     );

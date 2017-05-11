@@ -8,6 +8,7 @@ class PostList extends Component {
        <PostIndiv
           key={post._id}
           title={post.title}
+          cityName={this.props.cityName}
           name={ post.name }
           text={post.text}
           uniqueID={post._id}
@@ -25,6 +26,3 @@ class PostList extends Component {
 }
 
 export default PostList;
-
-
-// after post, warning: line 9 --- Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `PostList`.

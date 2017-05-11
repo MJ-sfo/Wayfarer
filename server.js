@@ -67,6 +67,7 @@ router.route('/comments')
     post.name = req.body.name;
     post.title = req.body.title;
     post.text = req.body.text;
+    post.city = req.body.city;
     post.date = Date.now();     //   need to store as time/date so can calculate how old a post is
     post.save(function(err) {
       if (err) {
