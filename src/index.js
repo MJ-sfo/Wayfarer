@@ -14,12 +14,19 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path='/' component={Home} />
       <Route path='/cities' component={Cities} />
-      <Route path='/cities/1' component={City} />
+      <Route path='/cities/:id' component={City} />
       <Route path='/profile' component={Profile} />
     </Router>
   </Layout>,
   document.getElementById('root')
 );
+
+
+
+// react router route params
+//props.params
+// in route path='/cities/:id' component={city}
+// in city ... {props.params.name}
 
 // // truncating review
 // $(document).ready(function() {
@@ -61,3 +68,4 @@ ReactDOM.render(
 //
 //   /* end ready */
 // });
+

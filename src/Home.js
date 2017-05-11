@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
-import {Link } from 'react-router';
+import React, { Component } from 'react'
+import {Grid, Row, Col} from 'react-bootstrap'
+import {Link } from 'react-router'
 import mainImage from '../public/images/base.jpg'
+import traveltop2 from '../public/images/traveltop2.jpg'
+import wayfarer from '../public/images/wayfarer.png'
 import locateImage from '../public/images/locate.svg'
-import blogImage from '../public/images/blog.svg'
 import reviewImage from '../public/images/review.svg'
+import blogImage from '../public/images/blog.svg'
 
 class Home extends Component {
   render() {
     return (
       <div>
+
         <img className="main-image" src={mainImage} alt={"mainImage"}/>
         <h3 className="explore"> <Link to={'/cities/1'}>Explore</Link> </h3>
         <Grid>
@@ -28,6 +31,24 @@ class Home extends Component {
             </Col>
           </Row>
         </Grid>
+      
+        <img className="main-image wow fadeInDown" data-wow-delay="0.2s" src={mainImage} alt={"mainImage"}/>
+        <div className="parallax"> {/* main parallax wrapper*/}
+            <div id="section-1" className="parallax-section"> {/* first section */}
+                <div className="parallax-layer parallax-layer-base">{/*parallax content*/}
+                    <div className="full-bg-img flex-center">{/* container to center content*/}
+                      <img className="main-image" id="wayfarer" alt="" src={wayfarer}/>
+                      <img id="top" alt="" src={traveltop2}/>
+                    </div>
+                </div>
+                <div className="parallax-layer parallax-layer-back">
+
+                </div>
+            </div> {/* end first section */}
+
+          <div className="section-2">
+
+          
       </div>
     );
   }

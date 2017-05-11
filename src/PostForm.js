@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      title: '',
       text: '',
       date: '',
       showModal: false,
     };
-    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClose = this.onClose.bind(this);
@@ -17,23 +17,23 @@ class PostForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(`${this.state.name} said "${this.state.text}"`)
-    let name = this.state.name.trim();
+    console.log(`title: ${this.state.title} and text: ${this.state.text}`)
+    let title = this.state.title.trim();
     let text = this.state.text.trim();
     let date = Date.now();
-    if (! text || ! name) {
+    if (! text || ! title) {
       return;
     }
-    this.props.onPostSubmit({name: name, text: text, date:date})
-    this.setState({name: '', text: ''})
+    this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
+    this.setState({title: '', text: ''})
   }
 
   handleTextChange(e) {
     this.setState({ text: e.target.value });
   }
 
-  handleNameChange(e) {
-    this.setState({ name: e.target.value });
+  handleTitleChange(e) {
+    this.setState({ title: e.target.value });
   }
 
   onClose(){
@@ -43,23 +43,25 @@ class PostForm extends Component {
   render() {
     return (
       <div className="post-form">
-        <a onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </a>
+        <button type="button" className="btn btn-outline-success" onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </button>
         { (this.state.showModal)
           ? (<form className="form" onSubmit={ this.handleSubmit }>
               <input
                 type='text'
-                placeholder='Update name...'
+                placeholder='Title'
                 value={ this.state.name }
                 onChange={ this.handleNameChange } />
               <input
                 type='text'
-                placeholder='Update your comment...'
+                placeholder='Text'
                 value={ this.state.text }
                 onChange={ this.handleTextChange } />
               <input
+                className="myButton"
                 type='submit'
                 value='Update' />
-              <a onClick={()=> this.onClose}> Cancel </a>
+              <span> </span>
+              <a className="myButtonCancel" onClick={()=> this.onClose}> Cancel </a>
             </form>)
           : null}
       </div>
