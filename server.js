@@ -103,25 +103,43 @@ router.route('/comments/:id')
     })
   })
 
+// get all cities
 router.route('/cities')
   .get(function(req, res) {
-    db.City.find(function(err, cities) {
-      if (err) {
-        res.send(err);
-      }
-      res.json(cities);
-    });
-  })
+    db.City.find({})
+      .populate('comments')
+      .exec(function(err, cities) {
+        if (err) {
+          res.send(err);
+        }
+        res.json(cities);
+      });
+    })
 
+// // get specific city info
+// router.route('/cities/:id')
+//   .get(function(req, res) {
+//     db.City.findById(req.params.id, function(err, city) {
+//       if (err) {
+//         res.send(err);
+//       }
+//       res.json(city);
+//     });
+//   })
+
+// get specific city info
 router.route('/cities/:id')
   .get(function(req, res) {
-    db.City.findById(req.params.id, function(err, city) {
-      if (err) {
-        res.send(err);
-      }
-      res.json(city);
-    });
-  })
+    db.City.findById(req.params.id)
+      .populate('comments')
+      .exec(function(err, city) {
+        if (err) {
+          res.send(err);
+        }
+        res.json(city);
+      });
+    })
+
 
 //start server
 app.listen(port, function() {

@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import PostBox from './PostBox'
 import $ from 'jquery-ajax'
 
-// this is when Route path='/cities/1' (index.js)
-// for Sprint 1, this only shows San Francisco
 class City extends Component {
   constructor(props) {
     super(props);
