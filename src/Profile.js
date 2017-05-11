@@ -14,7 +14,7 @@ class Profile extends Component {
               <Row>
                 <Col sm={12} md={4}>
                   <img src="" alt=""/>
-                    user is: {this.props.currentUser}
+                    user is: _{this.props.currentUser}
                   <UserPosts />
                 </Col>
               </Row>
