@@ -138,7 +138,12 @@ h3.explore {
   font-size: 80px;
   font-weight: bolder;
   letter-spacing: 5px;
-  text-decoration: none
+  text-decoration: none;
+}
+
+h3.explore a:hover {
+  text-decoration: none;
+  font-family: monaco;
 }
 
 img.city {
