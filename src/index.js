@@ -18,7 +18,7 @@ ReactDOM.render(
       <Route path='/profile' component={Profile} />
       <Route path='/cities' component={Cities} />
       <Route path='/cities/:id' component={City} />
-      // <Route path='/comments/:id' component={Comment}/>
+      <Route path='/comments/:id' component={Comments}/>
     </Route>
   </Router>,
 
@@ -73,4 +73,3 @@ ReactDOM.render(
 //
 //   /* end ready */
 // });
-

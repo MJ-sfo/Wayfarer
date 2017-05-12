@@ -4,7 +4,7 @@ import $ from 'jquery'
 
 
 // this is when Route path='/cities/comment/:id' (index.js)
-class Comment extends Component {
+class Comments extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class Comment extends Component {
     var id =  this.props.params.id
     $.ajax ({
       method: 'GET',
-      url: `http://localhost:3001/api/comments/${id}`// + api/cities req.params.id
+      url: `http://localhost:3001/api/comments/${id}`
     })
     .then(res => {
       this.setState({data: res});
@@ -86,4 +86,4 @@ class Comment extends Component {
   }
 }
 
-export default Comment;
+export default Comments;
