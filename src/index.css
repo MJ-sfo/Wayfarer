@@ -195,6 +195,7 @@ img.userimage {
 span#username {
   font-weight: bolder;
   font-size: 20px;
+  margin-left: 20px;
 }
 
 h5.usertitle {
@@ -353,6 +354,8 @@ a#cities {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 40px;
+  padding-top: 10px;
 }
 
 /*.post-box {
