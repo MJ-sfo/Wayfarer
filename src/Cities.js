@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import citiesImage from '../public/images/suitcase.jpg'
 import {Link} from 'react-router'
+import London from '../public/images/london.jpg'
+import Gibraltar from '../public/images/gib.jpg'
+import SF from '../public/images/sf.jpg'
 
 // this is when Route path='/cities' (index.js)
 class Cities extends Component {
@@ -28,17 +31,16 @@ class Cities extends Component {
 
   render() {
     return (
-      <div>
+      <div id="cities-container">
+        <p id="cities-adventure">Find your next adventure</p>
         <div className="cities-hover">
-          <img src={citiesImage} alt={"citiesImage"} height="100%" width="100%"/>
-            <span className="cities-text" >
-            <ul className="dropdown-content2">
-              <li className="findCity"> Find a City </li>
-              <li className="cityName"> <Link to={'/cities/San%20Francisco'}>San Francisco</Link></li>
-              <li className="cityName"> <a href="/cities/London">London</a></li>
-              <li className="cityName"> <a href="/cities/Gibraltar">Gibraltar</a></li>
-            </ul>
-          </span>
+          <Link to={'/cities/San%20Francisco'}><img className="cities-panel" src={SF} alt={"citiesImage"} height="100%" width="100%"/></Link>
+        </div>
+        <div className="cities-hover">
+          <Link to={'/cities/London'}><img className="cities-panel" src={London} alt={"citiesImage"} height="100%" width="100%"/></Link>
+        </div>
+        <div className="cities-hover">
+          <Link to={'/cities/Gibraltar'}><img className="cities-panel" src={Gibraltar} alt={"citiesImage"} height="100%" width="100%"/></Link>
         </div>
       </div>
     )}

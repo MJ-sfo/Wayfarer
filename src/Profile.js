@@ -7,7 +7,7 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
+      <div id="profile-container">
         <Grid>
           <Row className="profile-contents">
             <Col sm={12} md={8} mdOffset={2}><br/>
