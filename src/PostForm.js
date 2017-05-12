@@ -17,15 +17,17 @@ class PostForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(`title: ${this.state.title} and text: ${this.state.text}`)
+    console.log(`new post title: ${this.state.title} and text: ${this.state.text}`)
     let title = this.state.title.trim();
     let text = this.state.text.trim();
     let date = Date.now();
-    if (! text || ! title) {
+    if (!text || !title) {
       return;
     }
     this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
     this.setState({title: '', text: ''})
+
+    this.setState({ showModal: false})  // this removes form when click button
   }
 
   handleTextChange(e) {
@@ -37,20 +39,21 @@ class PostForm extends Component {
   }
 
   onClose(){
-    this.setState({ showModal: !this.state.showModal });
+    this.setState({ showModal: false });
+    // this.refs.form.getDOMNode().reset();
   }
 
   render() {
     return (
       <div className="post-form">
-        <button type="button" className="btn btn-outline-success" onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </button>
+        <button type="button" className="btn btn-outline-success" onClick={() => this.setState({ showModal: true})}> Add New Post </button>
         { (this.state.showModal)
           ? (<form className="form" onSubmit={ this.handleSubmit }>
               <input
                 type='text'
                 placeholder='Title'
                 value={ this.state.name }
-                onChange={ this.handleNameChange } />
+                onChange={ this.handleTitleChange } />
               <input
                 type='text'
                 placeholder='Text'
@@ -59,9 +62,10 @@ class PostForm extends Component {
               <input
                 className="myButton"
                 type='submit'
-                value='Update' />
+                value='Submit Post'
+                />
               <span> </span>
-              <a className="myButtonCancel" onClick={()=> this.onClose}> Cancel </a>
+              <a className="myButtonCancel" onClick={() => this.setState({ showModal: false})}> Cancel </a>
             </form>)
           : null}
       </div>

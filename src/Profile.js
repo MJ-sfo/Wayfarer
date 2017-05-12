@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import $ from 'jquery-ajax'
 import {Grid, Row, Col} from 'react-bootstrap'
-import UserPosts from './UserPosts'
+import UserPostBox from './UserPostBox'
+import sejin from '../public/images/sejin(3).jpg'
 
 class Profile extends Component {
-
   render() {
     return (
       <div>
@@ -13,9 +12,12 @@ class Profile extends Component {
             <Col sm={12} md={8} mdOffset={2}><br/>
               <Row>
                 <Col sm={12} md={4}>
-                  <img src="" alt=""/>
-                    user is: _{this.props.currentUser}
-                  <UserPosts />
+                  <img className="profile-image" src={sejin} alt="" height="200"/>
+                  <p className="profile-name"> Sejin K. </p>
+                </Col>
+                <Col sm={12} md={7} mdOffset={1}>
+                  <UserPostBox
+                    pollInterval={2000}/>
                 </Col>
               </Row>
             </Col>
@@ -27,3 +29,5 @@ class Profile extends Component {
 }
 
 export default Profile;
+
+// User Name: _{this.props.currentUser}
