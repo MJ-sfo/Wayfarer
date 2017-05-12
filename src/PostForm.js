@@ -13,7 +13,7 @@ class PostForm extends Component {
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClose = this.onClose.bind(this);
-  }
+  }  // constructor(props)
 
   handleSubmit(e) {
     e.preventDefault();
@@ -24,6 +24,7 @@ class PostForm extends Component {
     if (!text || !title) {
       return;
     }
+    console.log("the text lenght is: ", (text).length);
     this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
     this.setState({title: '', text: ''})
 
@@ -39,6 +40,7 @@ class PostForm extends Component {
   }
 
   onClose(){
+    console.log('onClose');
     this.setState({ showModal: false });
     // this.refs.form.getDOMNode().reset();
   }

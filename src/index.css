@@ -139,6 +139,7 @@ h3.explore {
 
 h3.explore a:hover {
   text-decoration: none;
+  font-family: monaco;
 }
 
 img.city {
@@ -194,7 +195,6 @@ img.userimage {
 span#username {
   font-weight: bolder;
   font-size: 20px;
-  margin-left: 20px;
 }
 
 h5.usertitle {
@@ -286,7 +286,7 @@ p {
 	background-color:#79bbff;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
-	border-radius:6px;
+	border-radius:6px;   //
 	border:1px solid #84bbf3;
 	display:inline-block;
 	cursor:pointer;
@@ -353,8 +353,6 @@ a#cities {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-left: 40px;
-  padding-top: 10px;
 }
 
 /*.post-box {
@@ -417,20 +415,6 @@ img#wayfarer {
   position: relative
 }
 
-
-.one-comment {
-  display: inline-block;
-  margin-top: 180px;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: monaco;
-}
-
-.one-comment h2 {
-  font-size: 24px;
-  color: blue;
-}
-
 div.profile-contents {
   margin-top: 80px;
 }
@@ -470,5 +454,4 @@ p.user-post, city {
   padding: 0px;
   padding-right: 10px;
   text-align: right;
-
 }
