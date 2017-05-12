@@ -1,3 +1,49 @@
+Wayfarer - https://murmuring-badlands-52547.herokuapp.com/
+
+We share city travel tales – the good and the bad.  A site to share personal travel stories and tips of different cities
+
+Technologies Used:
+-Frontend:
+REACT.JS
+JavaScript, JSX, jQuery, AJAX, Bootstrap
+-Backend:
+Node.js and MongoDB
+	Express, Mongoose, Firebase (user authentication), API (local)
+
+
+Breakthroughs
+-We figured out that utilizing a React front end yeilds quicker and more efficient changes to user utilization over Standard JS and WORDPRESS websites.  Refreshes are instantaeous and user cannot notice them.
+
+-You now have a modern front-end in React paired will a fully built API to serve the needs of your site.
+
+Technical Challenges:
+Moving data from Parent Component to Child Component (log-in information from Layout file to User file).
+
+Manipulating (truncating) input data. (jQuery .trunc does not work).
+
+
+Next Step - BETA version
+To expand security, when user logs in via Firebase, to capture user name and picture and move to User page.
+-User login for CRUD
+-Fully deployed site on hosted site
+-fixed bugs on version 1
+-can share posts via social media outlets
+
+This website validates that new posts aren't empty. Next step is to validate Title and Text are limited in length.
+
+
+Code I'm Proud Of:
+
+    let difference = Math.floor((now - post_time) /1000) ;
+    if ( Math.floor((difference) /(60*60*24*30*12) ) === 1 ) {
+      return Math.floor((difference) /(60*60*24*30*12) ) + " year";
+    }
+    else if ( Math.floor((difference) /(60*60*24*30*12) ) > 1 ) {
+      return Math.floor((difference) /(60*60*24*30*12) ) + " years";
+    }
+I'm proud of this code in PostIndiv.js because makes website continually update time elapse, with changing catenation.
+
+_____________________________________________________
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -1516,17 +1562,17 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)
