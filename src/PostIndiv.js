@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router'
 import {Row, Col} from 'react-bootstrap'
 import ReactConfirmAlert from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
@@ -121,7 +122,7 @@ class PostIndiv extends Component {
             cities/comment/">
               <h5 className="usertitle">Title: {this.props.title}</h5>
               <span id="username">{this.props.name}</span> says:
-              <br/><div className="userpost truncate moreless" id="arsh"> {this.props.text} </div>
+              <br/><div className="userpost truncate moreless" id="arsh"> <Link to={`/comments/${this.props.uniqueID}`}>{this.props.text} </Link></div>
             </a>
             <br/> <br/>
             <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
