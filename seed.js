@@ -47,7 +47,7 @@ commentsList.push({
 commentsList.push({
   name: 'Sejin P.',
   text: 'For me, when I visited SF for the very first time someone broke into my car and stole my bag. I was heartbroken, girls can understand my pain better. That day I decided, I will never visit or move to this city again. But destiny had something else in store for me and I bumped into this city again or should I say job opportunity brought me to this city again. ',
-  date: '2094380223364',
+  date: '1492000000000',
   uid: '2',
   title: 'Better think twice!',
   city: 'San Francisco'
