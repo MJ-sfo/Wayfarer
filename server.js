@@ -179,11 +179,7 @@ router.route('/cities')
 // get specific city info
 router.route('/cities/:name')
   .get(function(req, res) {
-<<<<<<< HEAD
-    db.City.findById(req.params.name)
-=======
     db.City.findOne({name: req.params.name})
->>>>>>> 247be3a351a910de125a4bca79e9e36ba84e9ece
       .populate('comments')
       .exec(function(err, city) {
         if (err) {

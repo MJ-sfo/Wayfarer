@@ -29,21 +29,7 @@ class Home extends Component {
               </Col>
             </Row>
           </Grid>
-        <img className="main-image wow fadeInDown" data-wow-delay="0.2s" src={mainImage} alt={"mainImage"}/>
-        <div className="parallax"> {/* main parallax wrapper*/}
-            <div id="section-1" className="parallax-section"> {/* first section */}
-                <div className="parallax-layer parallax-layer-base">{/*parallax content*/}
-                    <div className="full-bg-img flex-center">{/* container to center content*/}
-                      <img className="main-image" id="wayfarer" alt="" src={wayfarer}/>
-                      <img id="top" alt="" src={traveltop2}/>
-                    </div>
-                </div>
-              </div>
-                <div className="parallax-layer parallax-layer-back">
-                </div>
-            </div> {/* end first section */}
-          </div>
-          // <div className="section-2">
+
       </div>
     );
   }
