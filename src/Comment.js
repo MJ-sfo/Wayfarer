@@ -75,11 +75,24 @@ class Comments extends Component {
           <Col sm={12} md={8} mdOffset={2}>
             <div id="comment-title">{this.state.data.title}</div>
             <hr/>
-            <div className="comment-name">{this.state.data.name} said: </div>
-            <div className="comment-text">{this.state.data.text}</div>
-            <div className="comment-time">posted: {this.timePassed(this.state.data.date)} ago </div>
-            <hr/>
-            <div className="comment-city">{this.state.data.city}</div>
+            <div className="comment-box">
+              <Row>
+                <Col sm={12} md={3}>
+                  <div className="comment-name">{this.state.data.name} said: </div>
+                </Col>
+                <Col sm={12} md={4} mdOffset={5}>
+                  <div className="comment-time">posted: {this.timePassed(this.state.data.date)} ago </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col sm={12} md={8} mdOffset={2}>
+                  <div className="comment-text">{this.state.data.text}</div>
+                </Col>
+              </Row>
+              <Row>
+                <br/><div className="comment-city">{this.state.data.city}</div>
+              </Row>
+            </div>
           </Col>
         </Row>
       </Grid>
