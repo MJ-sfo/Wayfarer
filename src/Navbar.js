@@ -8,15 +8,15 @@ class Navbar extends Component {
       }
     }
 
-  handleOpen = () => {
+ handleOpen = () => {
     this.setState({ isOpen: true })
   }
 
-  handleClose = () => {
+ handleClose = () => {
      this.setState({ isOpen: false })
   }
 
-  sessionButton() {
+ sessionButton() {
     if (!this.props.currentUser ) {
       return (<li className="navtext"><a id="login" onClick={this.props.loginButtonClicked}> <span class="glyphicon glyphicon-log-in"></span>Log In</a></li>);
     } else {
@@ -24,7 +24,7 @@ class Navbar extends Component {
         <li className="navtext">
           <div className="dropdown">
             <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" height="15" /> { this.props.currentUser.displayName }
+            <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" height="43" /> { this.props.currentUser.displayName }
             <span className="caret"></span> </a>
             <ul className="dropdown-content">
               <li> <a href="/profile">View Profile</a></li>
@@ -36,15 +36,21 @@ class Navbar extends Component {
     }
   }
 
-  render() {
+ render() {
     return (
       <ul className="navbar">
         <li id="nav-wayfarer"><a id="wayfarer" href="/"><strong>Wayfarer</strong></a></li>
         {this.sessionButton()}
-        <li className="navtext"><a id="cities" href="/cities" title="Cities"
-          onMouseEnter={ this.handleOpen }
-          onMouseLeave={ this.handleClose }
-          open={ this.state.isOpen }> Cities <span className="caret"></span></a> </li>
+        <div className="dropdown">
+        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <li className="navtext"><a id="cities" href="/cities" title="Cities">Cities </a><span className="caret"></span> </li>
+        </a>
+        <ul className="dropdown-content">
+          <li> <a href="/cities/1">San Francisco</a></li>
+          <li> <a href="/cities/london">London</a></li>
+          <li> <a href="/cities/gibraltar">Gibraltar</a></li>
+        </ul>
+        </div>
       </ul>
     );
   }
@@ -54,4 +60,6 @@ export default Navbar;
 
 
 // Next steps:
-// 1. can we have mouse cursor appear when hovered on log in and log out?
+// 1. can we have <a> Cities </a> link to Cities page? and also
+// on hover, have it display all the cities?
+// 2. can we have mouse cursor appear when hovered on log in and log out?
