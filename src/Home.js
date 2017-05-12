@@ -7,7 +7,6 @@ import wayfarer from '../public/images/wayfarer.png'
 import locateImage from '../public/images/locate.svg'
 import reviewImage from '../public/images/review.svg'
 import blogImage from '../public/images/blog.svg'
-
 class Home extends Component {
   render() {
     return (
@@ -30,9 +29,9 @@ class Home extends Component {
               </Col>
             </Row>
           </Grid>
+
       </div>
     );
   }
 }
-
 export default Home;

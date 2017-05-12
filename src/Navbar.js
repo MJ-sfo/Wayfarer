@@ -46,9 +46,9 @@ class Navbar extends Component {
         <li className="navtext"><a id="cities" href="/cities" title="Cities">Cities </a><span className="caret"></span> </li>
         </a>
         <ul className="dropdown-content">
-          <li> <a href="/cities/1">San Francisco</a></li>
-          <li> <a href="/cities/london">London</a></li>
-          <li> <a href="/cities/gibraltar">Gibraltar</a></li>
+          <li> <a href="/cities/San%20Francisco">San Francisco</a></li>
+          <li> <a href="/cities/London">London</a></li>
+          <li> <a href="/cities/Gibraltar">Gibraltar</a></li>
         </ul>
         </div>
       </ul>
