@@ -12,13 +12,14 @@ Technologies Used:
 
 Technical Challenges:
 Moving data from Parent Component to Child Component (log-in information from Layout file to User file).
+
 Manipulating (truncating) input data. (jQuery .trunc does not work).
 
 
 Next Step - BETA version
 To expand security, when user logs in via Firebase, to capture user name and picture and move to User page.
 
-Now the website validates new posts are not empty, next step is to validate Title and Text are not too long.
+This website validates that new posts aren't empty. Next step is to validate Title and Text are limited in length.
 
 
 Code I'm Proud Of:
