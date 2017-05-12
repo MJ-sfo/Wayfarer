@@ -107,6 +107,14 @@ router.route('/comments')
   // });
 
 router.route('/comments/:id')
+  .get(function(req, res) {
+    db.Comment.findById(req.params.id, function(err, comments) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(comments);
+    });
+  })
   .delete(function(req,res) {
     db.Comment.remove({_id:req.params.id}, function(err, comment) {
       if (err) {
