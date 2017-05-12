@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {Grid, Row, Col} from 'react-bootstrap'
 import $ from 'jquery'
 
-
 // this is when Route path='/cities/comment/:id' (index.js)
 class Comments extends Component {
   constructor(props) {

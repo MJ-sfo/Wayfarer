@@ -10,12 +10,12 @@ import Comments from './Comment'
 import $ from 'jquery'
 import './index.css'
 
-
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path='/' component={Layout}>
       <IndexRoute component={Home} />
       <Route path='/profile' component={Profile} />
+      <Route path='/cities/comment/:id' component={Comments} />
       <Route path='/cities' component={Cities} />
       <Route path='/cities/:name' component={City} />
       <Route path='/comments/:id' component={Comments}/>

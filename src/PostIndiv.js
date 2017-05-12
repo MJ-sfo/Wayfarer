@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router'
 import {Row, Col} from 'react-bootstrap'
 import ReactConfirmAlert from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
@@ -67,68 +66,66 @@ class PostIndiv extends Component {
     let now = new Date().getTime() ; //  time right now
     // post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
-    if ( Math.floor((difference) /(60*60*24*30*12) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24*30*12) ) + " year ago";
-    }
-    else if ( Math.floor((difference) /(60*60*24*30*12) ) > 1 ) {
-      return Math.floor((difference) /(60*60*24*30*12) ) + " years ago";
-    }
-    else if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24*30) ) + " month ago";
+    if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
+      return Math.floor((difference) /(60*60*24*30) ) + " month";
     }
     else if ( Math.floor((difference) /(60*60*24*30) ) > 0 ) {
-      return Math.floor((difference) /(60*60*24*30) ) + " months ago";
+      return Math.floor((difference) /(60*60*24*30) ) + " months";
     }
     else if ( Math.floor((difference) /(60*60*24*7) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24*7) ) + " week ago";
+      return Math.floor((difference) /(60*60*24*7) ) + " week";
     }
     else if ( Math.floor((difference) /(60*60*24*7) ) > 0 ) {
-      return Math.floor((difference) /(60*60*24*7) ) + " weeks ago";
+      return Math.floor((difference) /(60*60*24*7) ) + " weeks";
     }
     else if ( Math.floor((difference) /(60*60*24) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24) ) + " day ago";
+      return Math.floor((difference) /(60*60*24) ) + " day";
     }
     else if ( Math.floor((difference) /(60*60*24) ) > 0 ) {
-      return Math.floor((difference) /(60*60*24) ) + " days ago";
+      return Math.floor((difference) /(60*60*24) ) + " days";
     }
     else if ( Math.floor((difference) /(60*60) ) === 1 ) {
-      return Math.floor((difference) /(60*60)  ) + " hour ago";
+      return Math.floor((difference) /(60*60)  ) + " hour";
     }
     else if ( Math.floor((difference) /(60*60) ) > 0 ) {
-      return Math.floor((difference) /(60*60)  ) + " hours ago";
+      return Math.floor((difference) /(60*60)  ) + " hours";
     }
     else if ( Math.floor((difference) /60 ) === 1 ) {
-      return Math.floor((difference) /60 ) + " minute ago";
+      return Math.floor((difference) /60 ) + " minute";
     }
     else if ( Math.floor((difference) /60 ) > 0 ) {
-      return Math.floor((difference) /60 ) + " minutes ago";
+      return Math.floor((difference) /60 ) + " minutes";
+    }
+    else if ( Math.floor((difference)) === 1 ) {
+      return Math.floor((difference) /60 ) + " second";
     }
     else {
-      return  "Just seconds ago!";
+      return difference + " seconds";
     }
   }
 
 
   render() {
-    // console.log('jane look', this.props.currentUser)
     return (
       <div>
         <Row className="show-grid post">
           <Col className="userimage" sm={12} md={3}>
-            <img id="userimage" height="100" src={this.props.currentUser.photoURL}/>
+            <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
 
           </Col>
           <Col className="userinfo" sm={12} md={8}>
-            <h5 className="usertitle">Title: {this.props.title}</h5>
-            <span id="username">{this.props.name}</span> says:
-            <br/><div className="userpost truncate moreless"> {this.props.text}</div>
-            <div id="readmore"><Link to={`/comments/${this.props.uniqueID}`}>Read More... </Link></div>
+            <a href="
+            cities/comment/">
+              <h5 className="usertitle">Title: {this.props.title}</h5>
+              <span id="username">{this.props.name}</span> says:
+              <br/><div className="userpost truncate moreless" > {this.props.text} </div>
+            </a>
             <br/> <br/>
             <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
             <a className="myButton" id="close" onClick={ this.deletePost }> Delete </a>
           </Col>
           <Col className="userinfo" sm={12} md={1}>
-            <div className="dateposted">Posted: {this.timePassed(this.props.date)} </div>
+            <div className="dateposted">Posted: {this.timePassed(this.props.date)} ago</div>
           </Col>
         </Row>
 

@@ -51,6 +51,7 @@ router.route('/nuke').get(function(req,res){
   });
 });
 
+
 //adding the /comments route to our /api router
 router.route('/comments')
   .get(function(req, res) {
