@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      title: '',
       text: '',
       date: '',
       showModal: false,
     };
-    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onClose = this.onClose.bind(this);
@@ -17,49 +17,55 @@ class PostForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(`${this.state.name} said "${this.state.text}"`)
-    let name = this.state.name.trim();
+    console.log(`new post title: ${this.state.title} and text: ${this.state.text}`)
+    let title = this.state.title.trim();
     let text = this.state.text.trim();
-    let date = new Date();
-    if (! text || ! name) {
+    let date = Date.now();
+    if (!text || !title) {
       return;
     }
-    this.props.onPostSubmit({name: name, text: text, date:date.toString()})
-    this.setState({name: '', text: ''})
+    this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
+    this.setState({title: '', text: ''})
+
+    this.setState({ showModal: false})  // this removes form when click button
   }
 
   handleTextChange(e) {
     this.setState({ text: e.target.value });
   }
 
-  handleNameChange(e) {
-    this.setState({ name: e.target.value });
+  handleTitleChange(e) {
+    this.setState({ title: e.target.value });
   }
 
   onClose(){
-    this.setState({ showModal: !this.state.showModal });
+    this.setState({ showModal: false });
+    // this.refs.form.getDOMNode().reset();
   }
 
   render() {
     return (
       <div className="post-form">
-        <a onClick={() => this.setState({ showModal: !this.state.showModal})}> Add New Post </a>
+        <button type="button" className="btn btn-outline-success" onClick={() => this.setState({ showModal: true})}> Add New Post </button>
         { (this.state.showModal)
           ? (<form className="form" onSubmit={ this.handleSubmit }>
-              <input
+              <input 
                 type='text'
-                placeholder='Update name...'
+                placeholder='Title'
                 value={ this.state.name }
-                onChange={ this.handleNameChange } />
+                onChange={ this.handleTitleChange } />
               <input
                 type='text'
-                placeholder='Update your comment...'
+                placeholder='Text'
                 value={ this.state.text }
                 onChange={ this.handleTextChange } />
               <input
+                className="myButton"
                 type='submit'
-                value='Update' />
-              <a onClick={()=> this.onClose}> Cancel </a>
+                value='Submit Post'
+                />
+              <span> </span>
+              <a className="myButtonCancel" onClick={() => this.setState({ showModal: false})}> Cancel </a>
             </form>)
           : null}
       </div>

@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PostIndiv from './PostIndiv'
 
 class PostList extends Component {
   render() {
+    // console.log('yo props are', this.props.currentUser)
     let postNodes = this.props.data.map( post => {
      return (
        <PostIndiv
           key={post._id}
+          title={post.title}
+          cityName={this.props.cityName}
+          currentUser={this.props.currentUser}
           name={ post.name }
           text={post.text}
           uniqueID={post._id}
@@ -24,6 +28,3 @@ class PostList extends Component {
 }
 
 export default PostList;
-
-
-// after post, warning: line 9 --- Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `PostList`.
