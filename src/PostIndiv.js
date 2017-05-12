@@ -104,7 +104,7 @@ class PostIndiv extends Component {
       return Math.floor((difference) /60 ) + " minutes";
     }
     else {
-      return difference + " just seconds";  //  Client wants this nomiclature for seconds
+      return "Just seconds";  //  Client wants this nomiclature for seconds
     }
   }
 
