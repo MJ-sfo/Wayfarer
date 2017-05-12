@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import PostIndiv from './PostIndiv'
+import $ from 'jquery-ajax'
+import {Row, Col} from 'react-bootstrap'
+import UserPosts from './UserPosts'
 
-class PostList extends Component {
+class UserPostList extends Component {
   render() {
-    // console.log('yo props are', this.props.currentUser)
     let postNodes = this.props.data.map( post => {
      return (
-       <PostIndiv
+       <UserPosts
           key={post._id}
           title={post.title}
-          cityName={this.props.cityName}
-          currentUser={this.props.currentUser}
+          city={post.city}
           name={ post.name }
           text={post.text}
           uniqueID={post._id}
@@ -20,11 +20,12 @@ class PostList extends Component {
         )
       })
       return (
-        <div className="post-list">
+        <div className="user-post-list">
+          <h3 className="user-post-header"> My most recent posts...</h3>
           {postNodes}
         </div>
       )
   }
 }
 
-export default PostList;
+export default UserPostList;

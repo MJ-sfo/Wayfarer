@@ -13,7 +13,7 @@ class City extends Component {
   loadCityFromServer() {
     $.ajax ({
       method: 'GET',
-      url: 'http://localhost:3001/api/cities/' + this.props.params.id// + api/cities req.params.id
+      url: 'http://localhost:3001/api/cities/' + this.props.params.name// + api/cities req.params.id
     })
     .then(res => {
       this.setState({data: res});
@@ -27,18 +27,18 @@ class City extends Component {
   render() {
     var cityName = this.state.data.name
     var cityImage = this.state.data.image
-    console.log({cityName})
+    // console.log({cityName})
+    // console.log('props are', this.props.currentUser)
     return (
       <div>
         <h2>{cityName}</h2>
         <img className="city" src={cityImage} alt="sf-city"/>
-
-      <PostBox
-        url={`http://localhost:3001/api/cities/${this.props.params.id}`}
-        pollInterval={2000}
-        cityName={cityName}
-        data={this.state.data}
-        />
+        <PostBox
+          url={`http://localhost:3001/api/cities/${this.props.params.name}`}
+          pollInterval={2000}
+          currentUser={this.props.currentUser}
+          cityName={cityName}
+          data={this.state.data} />
       </div>
     );
   }

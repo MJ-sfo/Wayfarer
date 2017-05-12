@@ -8,15 +8,15 @@ class Navbar extends Component {
       }
     }
 
-  handleOpen = () => {
+ handleOpen = () => {
     this.setState({ isOpen: true })
   }
 
-  handleClose = () => {
+ handleClose = () => {
      this.setState({ isOpen: false })
   }
 
-  sessionButton() {
+ sessionButton() {
     if (!this.props.currentUser ) {
       return (<li className="navtext"><a id="login" onClick={this.props.loginButtonClicked}> <span class="glyphicon glyphicon-log-in"></span>Log In</a></li>);
     } else {
@@ -24,7 +24,7 @@ class Navbar extends Component {
         <li className="navtext">
           <div className="dropdown">
             <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" height="15" /> { this.props.currentUser.displayName }
+            <img className="navbar-profile-pic" src={ this.props.currentUser.photoURL } alt="" height="43" /> { this.props.currentUser.displayName }
             <span className="caret"></span> </a>
             <ul className="dropdown-content">
               <li> <a href="/profile">View Profile</a></li>
@@ -36,7 +36,7 @@ class Navbar extends Component {
     }
   }
 
-  render() {
+ render() {
     return (
       <ul className="navbar">
         <li id="nav-wayfarer"><a id="wayfarer" href="/"><strong>Wayfarer</strong></a></li>

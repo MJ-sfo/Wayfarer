@@ -44,6 +44,7 @@ class Home extends Component {
             </div> {/* end first section */}
           </div>
           // <div className="section-2">
+      </div>
     );
   }
 }

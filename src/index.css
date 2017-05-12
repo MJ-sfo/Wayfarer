@@ -1,15 +1,26 @@
-@import url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
-
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans';
   text-align: center
+}
+
+footer#footer p{
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+div#readmore {
+  margin-top: 10px;
+  text-align: right
+}
+
+div.comment-city {
+  margin-bottom: 50px;
 }
 
 img.main-image {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 /*Styling for Navbar*/
@@ -23,7 +34,7 @@ ul.navbar li {
 }
 
 ul a:hover {
-  text-decoration: none
+  text-decoration: none;
 }
 
 ul.navbar {
@@ -35,7 +46,6 @@ ul.navbar {
   text-align: right;
   font-size: 20px;
   line-height: 0;
-  font-family: "Open Sans";
   padding: 0;
   text-decoration: none;
 }
@@ -50,6 +60,7 @@ ul.navbar a {
 
 li#nav-wayfarer {
   float: left;
+  padding: 20px 10px 10px 20px
 }
 
 a#wayfarer {
@@ -67,17 +78,20 @@ li#nav-logout {
 li.navtext {
   position: relative;
   padding-top: 5px;
+  padding-right: 20px;
 }
 
 div.dropdown {
   position: relative;
   display: inline-block;
+  padding-right: 20px;
 }
 
 ul.dropdown-content {
   display: none;
-  position: absolute;
+  position: relative;
   z-index: 1;
+  margin-right: 30px;
 }
 
 .dropdown-content a {
@@ -123,6 +137,7 @@ ul.dropdown-content {
   border-radius: 5px;
 }
 
+
 /*End styling for Navbar*/
 
 
@@ -134,7 +149,6 @@ h1.header {
 }
 
 h3.explore {
-  font-family: 'Open Sans';
   font-size: 80px;
   font-weight: bolder;
   letter-spacing: 5px;
@@ -143,7 +157,6 @@ h3.explore {
 
 h3.explore a:hover {
   text-decoration: none;
-  font-family: monaco;
 }
 
 img.city {
@@ -187,7 +200,6 @@ img.city {
 }*/
 
 div.post {
-  font-family: 'Open Sans';
   text-align: left;
   position: relative
 }
@@ -200,6 +212,7 @@ img.userimage {
 span#username {
   font-weight: bolder;
   font-size: 20px;
+  margin-left: 20px;
 }
 
 h5.usertitle {
@@ -241,7 +254,6 @@ div.cities-hover {
   position: relative;
   top: 80px;
 }
-
 .cities-hover .cities-text {
   background: rgba(0,0,0,0.5);
   position: absolute;
@@ -260,7 +272,7 @@ div.cities-hover {
 
 .findCity {
   position: relative;
-  bottom: 60px;
+  bottom: 40px;
   font-size: 70px;
   font-family: sans-serif;
 }
@@ -363,12 +375,19 @@ p {
     height: 100vh;
 }
 
+a#cities {
+  margin: 0;
+  padding: 0;
+}
+
 /*truncating review*/
 .truncate {
   width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 40px;
+  padding-top: 10px;
 }
 
 .one-comment {
@@ -423,7 +442,7 @@ img#top {
 }
 
 img#wayfarer {
-  width: 30%
+  width: 30%;
 }
 
 .parallax {
@@ -437,4 +456,70 @@ img#wayfarer {
   padding: 0;
   margin-top: 30px;
   position: relative
+}
+
+
+div.one-comment {
+  margin-top: 180px;
+  font-size: 30px;
+  color: black;
+  font-weight: bolder;
+}
+
+div#comment-title {
+  color: #0275d8;
+  letter-spacing: 5px;
+}
+
+div.comment-text {
+  font-size: 25px;
+  margin-top: 20px;
+}
+div.profile-contents {
+  margin-top: 80px;
+}
+
+div.comment-name {
+  text-align: left;
+  font-size: 20px
+}
+
+div.comment-time {
+  margin-top: 20px;
+  font-size: 15px;
+}
+/*CSS for Profile Page */
+div.user-post-container {
+  box-shadow: 1px 2px 2px 2px #888888
+}
+
+h5.user-post, title {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+h3.user-post-header {
+  margin-bottom: 40px;
+}
+
+div.userpost, truncate, moreless {
+  font-size: 15px;
+  font-style: italic;
+}
+
+p.profile-name {
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+img.profile-image {
+  margin-top: 30px
+}
+
+p.user-post, city {
+  margin-top: 10px;
+  padding: 0px;
+  padding-right: 10px;
+  text-align: right;
 }
