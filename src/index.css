@@ -5,6 +5,19 @@ body {
   text-align: center
 }
 
+footer#footer p{
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+div#readmore {
+  margin-top: 10px;
+  text-align: right
+}
+
+div.comment-city {
+  margin-bottom: 50px;
+}
+
 img.main-image {
   width: 100%;
   margin-top: 80px;
@@ -239,8 +252,8 @@ form.form {
 div.cities-hover {
   display: inline-block;
   position: relative;
+  top: 80px;
 }
-
 .cities-hover .cities-text {
   background: rgba(0,0,0,0.5);
   position: absolute;
@@ -248,15 +261,27 @@ div.cities-hover {
   padding-top: 140px;
   /*bottom: 0px;*/
   left: 0px;
-  height: 400px;
-  width: 800px;
+  height: 90%;
+  width: 100%;
   opacity: 0;
-  font-size: 40px;
+  font-size: 55px;
   color: white;
   font-weight: bolder;
   transition: opacity 500ms;
 }
-
+.findCity {
+  position: relative;
+  bottom: 40px;
+  font-size: 70px;
+  font-family: sans-serif;
+}
+.cityName {
+  position: relative;
+  top: 50px;
+}
+/*.cities-hover:hover .findCity {
+  opacity: 1;
+}*/
 .cities-hover:hover .cities-text {
   opacity: 1;
 }
@@ -423,24 +448,35 @@ img#wayfarer {
 }
 
 
-.one-comment {
-  display: inline-block;
+div.one-comment {
   margin-top: 180px;
   font-size: 30px;
-  font-weight: bold;
-  font-family: monaco;
+  color: black;
+  font-weight: bolder;
 }
 
-.one-comment h2 {
-  font-size: 24px;
-  color: blue;
+div#comment-title {
+  color: #0275d8;
+  letter-spacing: 5px;
 }
 
+div.comment-text {
+  font-size: 25px;
+  margin-top: 20px;
+}
 div.profile-contents {
   margin-top: 80px;
 }
 
+div.comment-name {
+  text-align: left;
+  font-size: 20px
+}
 
+div.comment-time {
+  margin-top: 20px;
+  font-size: 15px;
+}
 /*CSS for Profile Page */
 div.user-post-container {
   box-shadow: 1px 2px 2px 2px #888888
@@ -475,5 +511,4 @@ p.user-post, city {
   padding: 0px;
   padding-right: 10px;
   text-align: right;
-
 }

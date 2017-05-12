@@ -4,7 +4,7 @@ import $ from 'jquery'
 
 
 // this is when Route path='/cities/comment/:id' (index.js)
-class Comment extends Component {
+class Comments extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class Comment extends Component {
     var id =  this.props.params.id
     $.ajax ({
       method: 'GET',
-      url: `http://localhost:3001/api/comments/${id}`// + api/cities req.params.id
+      url: `http://localhost:3001/api/comments/${id}`
     })
     .then(res => {
       this.setState({data: res});
@@ -70,20 +70,22 @@ class Comment extends Component {
   }
 
   render() {
-    console.log('Kevin', this.state.data, this.state.data.text)
-    console.log('Brianna', this.props.params)
     return (
-      <div className="comment">
+      <Grid>
         <Row className="one-comment">
-          <Col sm={12} md={10} mdOffset={1}>
-            <h1>{this.state.data.name} says: </h1>
-            <h2>{this.state.data.text}</h2>
-            <h3>posted: {this.timePassed(this.state.data.date)} ago </h3>
+          <Col sm={12} md={8} mdOffset={2}>
+            <div id="comment-title">{this.state.data.title}</div>
+            <hr/>
+            <div className="comment-name">{this.state.data.name} said: </div>
+            <div className="comment-text">{this.state.data.text}</div>
+            <div className="comment-time">posted: {this.timePassed(this.state.data.date)} ago </div>
+            <hr/>
+            <div className="comment-city">{this.state.data.city}</div>
           </Col>
         </Row>
-      </div>
+      </Grid>
     );
   }
 }
 
-export default Comment;
+export default Comments;

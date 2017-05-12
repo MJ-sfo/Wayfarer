@@ -121,7 +121,8 @@ class PostIndiv extends Component {
           <Col className="userinfo" sm={12} md={8}>
             <h5 className="usertitle">Title: {this.props.title}</h5>
             <span id="username">{this.props.name}</span> says:
-            <br/><div className="userpost truncate moreless"> <Link to={`/comments/${this.props.uniqueID}`}>{this.props.text}</Link> </div>
+            <br/><div className="userpost truncate moreless"> {this.props.text}</div>
+            <div id="readmore"><Link to={`/comments/${this.props.uniqueID}`}>Read More... </Link></div>
             <br/> <br/>
             <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
             <a className="myButton" id="close" onClick={ this.deletePost }> Delete </a>

@@ -14,7 +14,7 @@ class Profile extends Component {
               <Row>
                 <Col sm={12} md={4}>
                   <img className="profile-image" src={sejin} alt="" height="200"/>
-                  <p className="profile-name"> Sejin K. </p>
+                  <p className="profile-name"> Sejin P. </p>
                 </Col>
                 <Col sm={12} md={7} mdOffset={1}>
                   <UserPostBox
