@@ -118,7 +118,7 @@ class PostIndiv extends Component {
             cities/comment/">
               <h5 className="usertitle">Title: {this.props.title}</h5>
               <span id="username">{this.props.name}</span> says:
-              <br/><div className="userpost truncate moreless" > {this.props.text} </div>
+              <br/><div className="userpost truncate moreless" id="arsh"> {this.props.text} </div>
             </a>
             <br/> <br/>
             <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
