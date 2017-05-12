@@ -113,8 +113,8 @@ commentsList.push({
     text: 'This is one of the "must see attractions" of Gibraltar. It is definitely worth a visit and very beautiful caves which have been made very interesting.',
     date: '1494380080369',
     uid: '3',
-    title: 'This is one of the "must see attractions" of Gibraltar. It is definitely worth a visit and very beautiful caves which have been made very interesting.',
-    city: "Gibraltar: St Michael's Cave"
+    title: 'Good times were had',
+    city: "Gibraltar"
     });
 
 

@@ -31,7 +31,7 @@ class City extends Component {
     // console.log('props are', this.props.currentUser)
     return (
       <div>
-        <h2>{cityName}</h2>
+        <h2 id="cityname">{cityName}</h2>
         <img className="city" src={cityImage} alt="sf-city"/>
         <PostBox
           url={`http://localhost:3001/api/cities/${this.props.params.name}`}

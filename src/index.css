@@ -9,18 +9,50 @@ footer#footer p{
   padding-top: 0px;
   padding-bottom: 30px;
 }
-div#readmore {
-  margin-top: 10px;
+
+div.readmore {
+  margin-top: 30px;
   text-align: right
 }
 
 div.comment-city {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  color: #0275d8;
 }
 
 img.main-image {
   width: 100%;
   margin-top: 80px;
+}
+
+
+img.city {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+  z-index:0;
+  top: 0
+}
+
+/*img.city {
+  width: 100%;
+  z-index: 0;
+  top: 0;
+  margin-top: 18px;
+}*/
+
+h2#cityname {
+  position: absolute;
+  right: 20px;
+  top: 300px;
+  z-index: 3;
+  color: white;
+  font-size: 80px;
+  font-weight: boler
+}
+
+#arsh {
+  white-space: pre-wrap;
 }
 
 /*Styling for Navbar*/
@@ -31,6 +63,7 @@ ul {
 ul.navbar li {
   float: right;
   display: inline-block;
+  font-weight: bold
 }
 
 ul a:hover {
@@ -48,6 +81,7 @@ ul.navbar {
   line-height: 0;
   padding: 0;
   text-decoration: none;
+  font-weight: bold
 }
 
 ul.navbar a {
@@ -56,6 +90,7 @@ ul.navbar a {
   line-height: 14px;
   padding: 15px;
   text-transform: uppercase;
+  font-weight: bold
 }
 
 li#nav-wayfarer {
@@ -116,6 +151,7 @@ ul.dropdown-content {
   padding: 0;
   margin: 0;
   border-radius: 5px;
+  color: blue;
 }
 
 .dropdown li {
@@ -157,12 +193,6 @@ h3.explore {
 
 h3.explore a:hover {
   text-decoration: none;
-}
-
-img.city {
-  width: 100%;
-  z-index: 0;
-  top: 0;
 }
 
 /*end testing*/
@@ -249,25 +279,52 @@ form.form {
   margin-top: 10px;
 }
 
-div.cities-hover {
-  display: inline-block;
-  position: relative;
-  top: 80px;
+/*.cities-hover:hover .cities-text {
+  opacity: 1;
+  display: block;
+}*/
+
+.cities-hover {
+  /*display: inline-block;*/
 }
-.cities-hover .cities-text {
-  background: rgba(0,0,0,0.5);
-  position: absolute;
-  margin: 0 auto;
-  padding-top: 140px;
-  /*bottom: 0px;*/
-  left: 0px;
-  height: 90%;
+
+.cities-hover img {
+  display: inline-block;
   width: 100%;
-  opacity: 0;
-  font-size: 55px;
+  height: auto
+}
+
+.cities-hover:hover cities-overlay {
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .2;
+  transition: .5s ease;
+  background-color: #008CBA
+}
+
+/*.cities:hover .cities-overlay {
+  opacity: 1
+}*/
+
+
+/*.cityName {
+  position: relative;
+  top: 50px;
+}*/
+
+.cityName {
   color: white;
-  font-weight: bolder;
-  transition: opacity 500ms;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .findCity {
@@ -277,17 +334,10 @@ div.cities-hover {
   font-family: sans-serif;
 }
 
-.cityName {
-  position: relative;
-  top: 50px;
-}
 /*.cities-hover:hover .findCity {
   opacity: 1;
 }*/
 
-.cities-hover:hover .cities-text {
-  opacity: 1;
-}
 
 .iconImage:hover {
   opacity: .5;
@@ -299,17 +349,27 @@ p {
 
 }
 
-.explore {
-  text-decoration: none;
-}
-
 .btn-outline {
     background-color: transparent;
     color: inherit;
     transition: all .5s;
+
+
+
 }
 .btn-success.btn-outline {
-    color: #5cb85c;
+    color: #84bbf3;
+    -moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+}
+
+.btn-outline-success {
+    -moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #84bbf3;
+  	color:#ffffff;
 }
 
 .myButton {
@@ -321,13 +381,13 @@ p {
 	-webkit-border-radius:6px;
 	border-radius:6px;
 	border:1px solid #84bbf3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:7px 24px;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 7px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
 }
@@ -382,20 +442,12 @@ a#cities {
 
 /*truncating review*/
 .truncate {
-  width: 300px;
+  width: 400px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-left: 40px;
   padding-top: 10px;
-}
-
-.one-comment {
-  display: inline-block;
-  margin-top: 300px;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: monaco;
 }
 
 /*.post-box {
@@ -469,6 +521,7 @@ div.one-comment {
 div#comment-title {
   color: #0275d8;
   letter-spacing: 5px;
+  font-size: 50px;
 }
 
 div.comment-text {
@@ -480,13 +533,28 @@ div.profile-contents {
 }
 
 div.comment-name {
-  text-align: left;
-  font-size: 20px
+  /*text-align: left;*/
+  font-size: 20px;
+  padding-top: 15px;
 }
 
+div.comment-box {
+  box-shadow: 1px 2px 2px 2px #888888;
+  /*background-color: #e8e8e8;
+  border: 1px solid;
+  border-radius: 20px;*/
+}
 div.comment-time {
-  margin-top: 20px;
+  /*margin-top: 20px;*/
+  text-align: right;
   font-size: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+
+img#share {
+  height: 40px;
+
 }
 /*CSS for Profile Page */
 div.user-post-container {
@@ -522,4 +590,43 @@ p.user-post, city {
   padding: 0px;
   padding-right: 10px;
   text-align: right;
+}
+
+div#profile-container {
+  margin-top: 50px;
+}
+
+img.cities-panel {
+  /*width: 50%;*/
+  /*padding: 20px;*/
+}
+
+div#cities-container {
+  margin-top: 85px;
+}
+
+p#cities-adventure {
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+button.explore {
+  font-weight: 700px;
+  font-size: 50px;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 48px;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 100px;
+  border-width: 9px;
+  margin-top: 50px;
+  background-color: #fff;
+  }
+
+
+div.explore a:hover {
+  color: black
 }
