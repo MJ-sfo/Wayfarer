@@ -13,7 +13,7 @@ class Comment extends Component {
   loadCommentFromServer() {
     $.ajax ({
       method: 'GET',
-      url: 'http://localhost:3001/api/comments/5914ead3095c58f1d8d88c5b' // + api/cities req.params.id
+      url: 'http://localhost:3001/api/cities/comments/' + this.props.params.id // + api/cities req.params.id
     })
     .then(res => {
       this.setState({data: res});
