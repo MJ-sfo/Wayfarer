@@ -37,24 +37,28 @@ class Layout extends Component {
     auth.signOut(); // also updates state
   }
 
-  render() {
-    // var that = this;
-    // var childrenWithProps = React.Children.map(this.props.children, function(child){
-    //   return React.cloneElement(child, {currentUser: that.state.currentUser}) {childrenWithProps}
-    // })
-    console.log('layout props', this.props.children)
-    return (
-      <div>
-        <Navbar
-          currentUser={ this.state.currentUser }
-          loginButtonClicked={ this.loginButtonClicked }
-          logoutButtonClicked={ this.logoutButtonClicked }/>
-        {this.props.children && React.cloneElement(this.props.children, {currentUser: this.state.currentUser})}
-        <Footer />
-      </div>
-    );
+  render() { console.log('LAYOUT props.chilren', this.props.children)
+   let children = React.Children.map(this.props.children,
+     (child) => {
+       console.log('adding newProp to child', child.props)
+       child = React.cloneElement(child, { currentUser: this.state.currentUser })
+       console.log('now child has props', child.props)
+       return child
+     }
+   );
+   console.log('children in LAYOUT', children)
+   return (
+     <div>
+       <Navbar
+         currentUser={ this.state.currentUser }
+         loginButtonClicked={ this.loginButtonClicked }
+         logoutButtonClicked={ this.logoutButtonClicked }/>
+       {children}
+       <Footer />
+     </div>
+   );
   }
-}
+ }
 
 export default Layout;
 

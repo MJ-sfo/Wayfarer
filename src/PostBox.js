@@ -79,9 +79,11 @@ class PostBox extends Component {
             <Col sm={12} md={8} mdOffset={2}><br/>
               <PostForm
                 onPostSubmit={this.handlePostSubmit}
-                cityName={this.props.cityName}/>
+                cityName={this.props.cityName}
+                currentUser={this.props.currentUser}/>
               <PostList
                 data={this.state.data}
+                currentUser={this.props.currentUser}
                 cityName={this.props.cityName}
                 onPostDelete={this.handlePostDelete}
                 onPostUpdate={this.handlePostUpdate}/>

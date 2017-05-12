@@ -27,8 +27,8 @@ class City extends Component {
   render() {
     var cityName = this.state.data.name
     var cityImage = this.state.data.image
-    console.log({cityName})
-    console.log('props are', this.props.currentUser)
+    // console.log({cityName})
+    // console.log('props are', this.props.currentUser)
     return (
       <div>
         <h2>{cityName}</h2>
@@ -36,6 +36,7 @@ class City extends Component {
         <PostBox
           url={`http://localhost:3001/api/cities/${this.props.params.id}`}
           pollInterval={2000}
+          currentUser={this.props.currentUser}
           cityName={cityName}
           data={this.state.data} />
       </div>
