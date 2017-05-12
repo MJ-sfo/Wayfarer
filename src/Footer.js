@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
       <Grid>
         <hr />
-        <footer>
+        <footer id="footer">
           <p>© Wayfarer by J-SKM 2017</p>
         </footer>
       </Grid>

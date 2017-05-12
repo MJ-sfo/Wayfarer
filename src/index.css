@@ -5,6 +5,15 @@ body {
   text-align: center
 }
 
+footer#footer p{
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+div.comment-city {
+  margin-bottom: 50px;
+}
+
 img.main-image {
   width: 100%;
   margin-top: 50px;
@@ -418,24 +427,35 @@ img#wayfarer {
 }
 
 
-.one-comment {
-  display: inline-block;
+div.one-comment {
   margin-top: 180px;
   font-size: 30px;
-  font-weight: bold;
-  font-family: monaco;
+  color: black;
+  font-weight: bolder;
 }
 
-.one-comment h2 {
-  font-size: 24px;
-  color: blue;
+div#comment-title {
+  color: #0275d8;
+  letter-spacing: 5px;
 }
 
+div.comment-text {
+  font-size: 25px;
+  margin-top: 20px;
+}
 div.profile-contents {
   margin-top: 80px;
 }
 
+div.comment-name {
+  text-align: left;
+  font-size: 20px
+}
 
+div.comment-time {
+  margin-top: 20px;
+  font-size: 15px;
+}
 /*CSS for Profile Page */
 div.user-post-container {
   box-shadow: 1px 2px 2px 2px #888888
