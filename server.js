@@ -141,7 +141,7 @@ router.route('/comments/:id')
   })
 
 // get comments from one user name
-router.route('/comments/:name')
+router.route('/profile/comments/:name')
   .get(function(req, res) {
     db.Comment.find({name: req.params.name}, function(err, comments) {
       if (err) {

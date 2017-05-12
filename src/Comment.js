@@ -76,7 +76,7 @@ class Comment extends Component {
       <div className="comment">
         <Row className="one-comment">
           <Col sm={12} md={10} mdOffset={1}>
-            <h1>{this.state.data.name} blogs: </h1>
+            <h1>{this.state.data.name} says: </h1>
             <h2>{this.state.data.text}</h2>
             <h3>posted: {this.timePassed(this.state.data.date)} ago </h3>
           </Col>

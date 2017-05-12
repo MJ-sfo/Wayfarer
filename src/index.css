@@ -7,7 +7,7 @@ body {
 
 img.main-image {
   width: 100%;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 /*Styling for Navbar*/
@@ -21,7 +21,7 @@ ul.navbar li {
 }
 
 ul a:hover {
-  text-decoration: none
+  text-decoration: none;
 }
 
 ul.navbar {
@@ -47,6 +47,7 @@ ul.navbar a {
 
 li#nav-wayfarer {
   float: left;
+  padding: 20px 10px 10px 20px
 }
 
 a#wayfarer {
@@ -64,17 +65,20 @@ li#nav-logout {
 li.navtext {
   position: relative;
   padding-top: 5px;
+  padding-right: 20px;
 }
 
 div.dropdown {
   position: relative;
   display: inline-block;
+  padding-right: 20px;
 }
 
 ul.dropdown-content {
   display: none;
-  position: absolute;
+  position: relative;
   z-index: 1;
+  margin-right: 30px;
 }
 
 .dropdown-content a {
@@ -119,6 +123,7 @@ ul.dropdown-content {
   background-color: #99CFE9;
   border-radius: 5px;
 }
+
 
 /*End styling for Navbar*/
 
@@ -344,7 +349,7 @@ p {
 
 a#cities {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 /*truncating review*/
