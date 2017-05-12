@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router'
 import {Row, Col} from 'react-bootstrap'
 import ReactConfirmAlert from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css'
@@ -109,17 +110,18 @@ class PostIndiv extends Component {
 
 
   render() {
+    // console.log('jane look', this.props.currentUser)
     return (
       <div>
         <Row className="show-grid post">
           <Col className="userimage" sm={12} md={3}>
-            <img id="userimage" src="http://rosupport.com/demo2/assets/images/gotm.jpg"/>
+            <img id="userimage" height="100" src={this.props.currentUser.photoURL}/>
 
           </Col>
           <Col className="userinfo" sm={12} md={8}>
             <h5 className="usertitle">Title: {this.props.title}</h5>
             <span id="username">{this.props.name}</span> says:
-            <br/><div className="userpost truncate moreless"> {this.props.text} </div>
+            <br/><div className="userpost truncate moreless"> <Link to={`/comments/${this.props.uniqueID}`}>{this.props.text}</Link> </div>
             <br/> <br/>
             <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
             <a className="myButton" id="close" onClick={ this.deletePost }> Delete </a>

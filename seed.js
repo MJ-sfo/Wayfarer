@@ -8,7 +8,7 @@ citiesList.push({
   description: 'San Francisco, is the cultural, commercial, and financial \
                 center of Northern California. It is the birthplace of the \
                 United Nations.',
-  image: 'http://genheration.com/wp-content/uploads/2016/04/San-Francisco.jpg',
+  image: 'https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/08/SANFRANCISCO.jpg',
   comments: []
 });
 
@@ -20,7 +20,7 @@ citiesList.push({
                 in the arts, commerce, education, entertainment, fashion, \
                 finance, healthcare, media, professional services, research and \
                 development, tourism, and transportation.',
-  image: 'https://media.timeout.com/images/100644443/image.jpg',
+  image: 'https://static01.nyt.com/images/2015/12/09/travel/09intransitphoto-london/09intransitphoto-london-facebookJumbo.jpg',
   comments: []
 });
 

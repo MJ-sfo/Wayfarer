@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, browserHistory, Route} from 'react-router'
+import {Router, browserHistory, Route, IndexRoute} from 'react-router'
 import Home from './Home'
 import Cities from './Cities'
 import City from './City'
@@ -12,15 +12,16 @@ import './index.css'
 
 
 ReactDOM.render(
-  <Layout>
-    <Router history={browserHistory}>
-      <Route path='/' component={Home} />
+  <Router history={browserHistory}>
+    <Route path='/' component={Layout}>
+      <IndexRoute component={Home} />
+      <Route path='/profile' component={Profile} />
       <Route path='/cities' component={Cities} />
       <Route path='/cities/:id' component={City} />
-      <Route path='/profile' component={Profile} />
-      <Route path='/cities/comment/:id' component={Comments} />
-    </Router>
-  </Layout>,
+      // <Route path='/comments/:id' component={Comment}/>
+    </Route>
+  </Router>,
+
   document.getElementById('root')
 );
 

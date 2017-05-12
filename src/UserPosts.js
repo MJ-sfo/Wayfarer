@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import $ from 'jquery-ajax'
 import {Grid, Row, Col} from 'react-bootstrap'
+import {Link} from 'react-router'
 import ReactConfirmAlert from 'react-confirm-alert'
 
 class UserPosts extends Component {
@@ -114,7 +115,7 @@ class UserPosts extends Component {
 
 
   render() {
-    console.log('look jane', this.props)
+    // console.log('look jane', this.props)
     return (
       <div className="user-post-container">
         <Row className="show-grid post">
@@ -128,7 +129,7 @@ class UserPosts extends Component {
         <Row>
           <Col sm={12} md={10} mdOffset={1}>
             <br/>
-            <div className="userpost truncate moreless"> {this.props.text} </div>
+            <div className="userpost truncate moreless"> <Link to={`/comments/${this.props.uniqueID}`}>{this.props.text} </Link></div>
             <br/>
             <br/>
           </Col>
