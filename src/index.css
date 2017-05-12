@@ -260,8 +260,9 @@ div.cities-hover {
 
 .findCity {
   position: relative;
-  bottom: 40px;
+  bottom: 60px;
   font-size: 70px;
+  font-family: sans-serif;
 }
 
 .cityName {

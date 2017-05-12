@@ -166,9 +166,9 @@ router.route('/cities')
 //   })
 
 // get specific city info
-router.route('/cities/:id')
+router.route('/cities/:name')
   .get(function(req, res) {
-    db.City.findById(req.params.id)
+    db.City.findById(req.params.name)
       .populate('comments')
       .exec(function(err, city) {
         if (err) {
