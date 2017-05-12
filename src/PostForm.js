@@ -24,6 +24,7 @@ class PostForm extends Component {
     if (!text || !title) {
       return;
     }
+    console.log("the text lenght is: ", (text).length);
     this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
     this.setState({title: '', text: ''})
 
@@ -49,7 +50,7 @@ class PostForm extends Component {
         <button type="button" className="btn btn-outline-success" onClick={() => this.setState({ showModal: true})}> Add New Post </button>
         { (this.state.showModal)
           ? (<form className="form" onSubmit={ this.handleSubmit }>
-              <input 
+              <input
                 type='text'
                 placeholder='Title'
                 value={ this.state.name }

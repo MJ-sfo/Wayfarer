@@ -9,8 +9,8 @@ class PostIndiv extends Component {
     super(props);
     this.state={
       // name: '', we are no longer allowing users to change name
-      text: '',
-      title: '',
+      text: this.props.text,
+      title: this.props.title,
       toBeUpdated: false,
       showDialog: false // for delete modal
     }
@@ -118,7 +118,7 @@ class PostIndiv extends Component {
             cities/comment/">
               <h5 className="usertitle">Title: {this.props.title}</h5>
               <span id="username">{this.props.name}</span> says:
-              <br/><div className="userpost truncate moreless" > {this.props.text} </div>
+              <br/><div className="userpost truncate moreless" id="arsh"> {this.props.text} </div>
             </a>
             <br/> <br/>
             <a className="myButton" id="close" onClick={ this.updatePost }> Edit </a> <span id="or"> </span>
@@ -141,7 +141,7 @@ class PostIndiv extends Component {
                       rows='1'
                       type='text'
                       placeholder={ this.state.title }
-                      value={ this.setState.title }
+                      value={ this.state.title }
                       onChange={ this.handleTitleChange }></textarea><span>
                     <label className="col-md-2 col-sm-3 col-xs-4 control-label" for="textarea1">Text</label>
                     <textarea

@@ -23,6 +23,10 @@ img.main-image {
   margin-top: 80px;
 }
 
+#arsh {
+  white-space: pre-wrap;
+}
+
 /*Styling for Navbar*/
 ul {
   list-style: none;
