@@ -17,7 +17,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path='/profile' component={Profile} />
       <Route path='/cities' component={Cities} />
-      <Route path='/cities/:id' component={City} />
+      <Route path='/cities/:name' component={City} />
       <Route path='/comments/:id' component={Comments}/>
     </Route>
   </Router>,
