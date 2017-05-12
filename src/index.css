@@ -16,7 +16,8 @@ div.readmore {
 }
 
 div.comment-city {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  color: #0275d8;
 }
 
 img.main-image {
@@ -538,7 +539,7 @@ div.comment-name {
 
 div.comment-box {
   background-color: #e8e8e8;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 20px;
 }
 div.comment-time {
@@ -547,6 +548,10 @@ div.comment-time {
   font-size: 15px;
   padding-top: 15px;
   padding-right: 15px;
+}
+
+img#share {
+  height: 30px;
 }
 /*CSS for Profile Page */
 div.user-post-container {
