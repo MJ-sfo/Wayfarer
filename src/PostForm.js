@@ -62,7 +62,7 @@ class PostForm extends Component {
               <input
                 className="myButton"
                 type='submit'
-                value='Update'
+                value='Submit Post'
                 />
               <span> </span>
               <a className="myButtonCancel" onClick={() => this.setState({ showModal: false})}> Cancel </a>

@@ -20,7 +20,7 @@ class PostBox extends Component {
       url: this.props.url
     })
     .then(res => {
-      this.setState({data: res.comments})
+      this.setState({data: res.comments.reverse()})  //  reverse posts most recent on top
     })
   }
 
