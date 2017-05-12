@@ -1,4 +1,4 @@
-Wayfarer - Link to Deployed version of the project
+Wayfarer - https://murmuring-badlands-52547.herokuapp.com/
 
 We share city travel tales – the good and the bad.
 
@@ -8,6 +8,8 @@ Technologies Used:
 - CSS
 - Bootstrap
 - Firebase
+- Node
+- Express
 
 
 Technical Challenges:
