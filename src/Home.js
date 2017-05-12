@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Grid, Row, Col} from 'react-bootstrap'
 import {Link } from 'react-router'
-import mainImage from '../public/images/base.jpg'
+import base2 from '../public/images/base2.jpg'
 import locateImage from '../public/images/locate.svg'
 import reviewImage from '../public/images/review.svg'
 import blogImage from '../public/images/blog.svg'
@@ -11,8 +11,7 @@ class Home extends Component {
     return (
       <div>
         <div class="home-container">
-          <img className="main-image" src={mainImage} alt={"mainImage"}/>
-          <div className="overlay-image"></div>
+          <img className="main-image" src={base2} alt={"mainImage"}/>
           <button className="explore"><Link to={'/cities'}>Explore</Link> </button>
         </div>
         <Grid>

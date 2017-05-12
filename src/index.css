@@ -442,7 +442,7 @@ a#cities {
 
 /*truncating review*/
 .truncate {
-  width: 300px;
+  width: 400px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -521,6 +521,7 @@ div.one-comment {
 div#comment-title {
   color: #0275d8;
   letter-spacing: 5px;
+  font-size: 50px;
 }
 
 div.comment-text {
@@ -538,9 +539,10 @@ div.comment-name {
 }
 
 div.comment-box {
-  background-color: #e8e8e8;
+  box-shadow: 1px 2px 2px 2px #888888;
+  /*background-color: #e8e8e8;
   border: 1px solid;
-  border-radius: 20px;
+  border-radius: 20px;*/
 }
 div.comment-time {
   /*margin-top: 20px;*/
@@ -551,7 +553,8 @@ div.comment-time {
 }
 
 img#share {
-  height: 30px;
+  height: 40px;
+
 }
 /*CSS for Profile Page */
 div.user-post-container {
@@ -594,8 +597,8 @@ div#profile-container {
 }
 
 img.cities-panel {
-  width: 80%;
-  padding: 20px;
+  /*width: 50%;*/
+  /*padding: 20px;*/
 }
 
 div#cities-container {
