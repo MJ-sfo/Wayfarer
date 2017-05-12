@@ -6,7 +6,10 @@ import Cities from './Cities'
 import City from './City'
 import Layout from './Layout'
 import Profile from './Profile'
+import Comments from './Comment'
+import $ from 'jquery'
 import './index.css'
+
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -18,8 +21,10 @@ ReactDOM.render(
       // <Route path='/comments/:id' component={Comment}/>
     </Route>
   </Router>,
+
   document.getElementById('root')
 );
+
 
 
 
@@ -68,3 +73,4 @@ ReactDOM.render(
 //
 //   /* end ready */
 // });
+

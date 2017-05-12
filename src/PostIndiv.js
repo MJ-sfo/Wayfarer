@@ -67,41 +67,44 @@ class PostIndiv extends Component {
     let now = new Date().getTime() ; //  time right now
     // post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
-    if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24*30) ) + " month";
+    if ( Math.floor((difference) /(60*60*24*30*12) ) === 1 ) {
+      return Math.floor((difference) /(60*60*24*30*12) ) + " year ago";
+    }
+    else if ( Math.floor((difference) /(60*60*24*30*12) ) > 1 ) {
+      return Math.floor((difference) /(60*60*24*30*12) ) + " years ago";
+    }
+    else if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
+      return Math.floor((difference) /(60*60*24*30) ) + " month ago";
     }
     else if ( Math.floor((difference) /(60*60*24*30) ) > 0 ) {
-      return Math.floor((difference) /(60*60*24*30) ) + " months";
+      return Math.floor((difference) /(60*60*24*30) ) + " months ago";
     }
     else if ( Math.floor((difference) /(60*60*24*7) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24*7) ) + " week";
+      return Math.floor((difference) /(60*60*24*7) ) + " week ago";
     }
     else if ( Math.floor((difference) /(60*60*24*7) ) > 0 ) {
-      return Math.floor((difference) /(60*60*24*7) ) + " weeks";
+      return Math.floor((difference) /(60*60*24*7) ) + " weeks ago";
     }
     else if ( Math.floor((difference) /(60*60*24) ) === 1 ) {
-      return Math.floor((difference) /(60*60*24) ) + " day";
+      return Math.floor((difference) /(60*60*24) ) + " day ago";
     }
     else if ( Math.floor((difference) /(60*60*24) ) > 0 ) {
-      return Math.floor((difference) /(60*60*24) ) + " days";
+      return Math.floor((difference) /(60*60*24) ) + " days ago";
     }
     else if ( Math.floor((difference) /(60*60) ) === 1 ) {
-      return Math.floor((difference) /(60*60)  ) + " hour";
+      return Math.floor((difference) /(60*60)  ) + " hour ago";
     }
     else if ( Math.floor((difference) /(60*60) ) > 0 ) {
-      return Math.floor((difference) /(60*60)  ) + " hours";
+      return Math.floor((difference) /(60*60)  ) + " hours ago";
     }
     else if ( Math.floor((difference) /60 ) === 1 ) {
-      return Math.floor((difference) /60 ) + " minute";
+      return Math.floor((difference) /60 ) + " minute ago";
     }
     else if ( Math.floor((difference) /60 ) > 0 ) {
-      return Math.floor((difference) /60 ) + " minutes";
-    }
-    else if ( Math.floor((difference)) === 1 ) {
-      return Math.floor((difference) /60 ) + " second";
+      return Math.floor((difference) /60 ) + " minutes ago";
     }
     else {
-      return difference + " seconds";
+      return  "Just seconds ago!";
     }
   }
 
@@ -124,7 +127,7 @@ class PostIndiv extends Component {
             <a className="myButton" id="close" onClick={ this.deletePost }> Delete </a>
           </Col>
           <Col className="userinfo" sm={12} md={1}>
-            <div className="dateposted">Posted: {this.timePassed(this.props.date)} ago</div>
+            <div className="dateposted">Posted: {this.timePassed(this.props.date)} </div>
           </Col>
         </Row>
 

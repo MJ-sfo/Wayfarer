@@ -72,7 +72,13 @@ class UserPosts extends Component {
     let now = new Date().getTime() ; //  time right now
     // post_time = Date.parse(post_time);  // converts text of date to number
     let difference = Math.floor((now - post_time) /1000) ;
-    if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
+    if ( Math.floor((difference) /(60*60*24*30*12) ) === 1 ) {
+      return Math.floor((difference) /(60*60*24*30*12) ) + " year";
+    }
+    else if ( Math.floor((difference) /(60*60*24*30*12) ) > 1 ) {
+      return Math.floor((difference) /(60*60*24*30*12) ) + " years";
+    }
+    else if ( Math.floor((difference) /(60*60*24*30) ) === 1 ) {
       return Math.floor((difference) /(60*60*24*30) ) + " month";
     }
     else if ( Math.floor((difference) /(60*60*24*30) ) > 0 ) {
@@ -102,11 +108,8 @@ class UserPosts extends Component {
     else if ( Math.floor((difference) /60 ) > 0 ) {
       return Math.floor((difference) /60 ) + " minutes";
     }
-    else if ( Math.floor((difference)) === 1 ) {
-      return Math.floor((difference) /60 ) + " second";
-    }
     else {
-      return difference + " seconds";
+      return  "Just seconds ";
     }
   }
 
