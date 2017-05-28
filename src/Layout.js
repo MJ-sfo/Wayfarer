@@ -13,6 +13,7 @@ class Layout extends Component {
 
   // communicates with firebase, before stuff mounts on page
   componentWillMount() {
+    window.Myvars = {};
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         console.log('Logged in:', currentUser);
@@ -38,15 +39,19 @@ class Layout extends Component {
   }
 
   render() { console.log('LAYOUT props.chilren', this.props.children)
+    // console.log('React.Children', React.Children)
+    // React.Children.map(console.log());
    let children = React.Children.map(this.props.children,
      (child) => {
        console.log('adding newProp to child', child.props)
-       child = React.cloneElement(child, { currentUser: this.state.currentUser })
+       child = React.cloneElement(child, { currentUser: this.state.currentUser})
        console.log('now child has props', child.props)
        return child
      }
-   );
+   );  // let children
    console.log('children in LAYOUT', children)
+   console.log('this.state.currentUser', this.state.currentUser)
+  //  console.log('just photo', this.state.currentUser.U.photoURL)
    return (
      <div>
        <Navbar
@@ -55,6 +60,8 @@ class Layout extends Component {
          logoutButtonClicked={ this.logoutButtonClicked }/>
        {children}
        <Footer />
+       <p>putt object here {this.props.currentUser}</p>
+       <p>this is outside navbar</p>
      </div>
    );
   }

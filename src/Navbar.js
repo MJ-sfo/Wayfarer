@@ -17,9 +17,15 @@ class Navbar extends Component {
   }
 
  sessionButton() {
+   console.log("this.state is: ", this.state)
+     console.log("this.prop is: ", this.prop)
     if (!this.props.currentUser ) {
       return (<li className="navtext"><a id="login" onClick={this.props.loginButtonClicked}> <span class="glyphicon glyphicon-log-in"></span>Log In</a></li>);
     } else {
+      window.Myvars = {
+        photoURL: this.props.currentUser.photoURL,
+        displayName: this.props.currentUser.displayName
+      }
       return (
         <li className="navtext">
           <div className="dropdown">
@@ -37,6 +43,7 @@ class Navbar extends Component {
   }
 
  render() {
+
     return (
       <ul className="navbar">
         <li id="nav-wayfarer"><a id="wayfarer" href="/"><strong>Wayfarer</strong></a></li>
