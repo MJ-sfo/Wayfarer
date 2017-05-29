@@ -15,24 +15,7 @@ class UserPosts extends Component {
       toBeUpdated: false,
       showDialog: false // for delete modal
     }
-    // this.deletePost = this.deletePost.bind(this);
-    // this.updatePost = this.updatePost.bind(this);
-    // this.handleTitleChange = this.handleTitleChange.bind(this);
-    // this.handleCityChange = this.handleCityChange.bind(this);
-    // this.handleTextChange = this.handleTextChange.bind(this);
-    // this.handlePostUpdate = this.handlePostUpdate.bind(this);
-    // this.handleDeletePost = this.handleDeletePost.bind(this);
   };
-
-  // handleTitleChange(e) {
-  //   this.setState({ title: e.target.value });
-  // }
-  // handleTextChange(e) {
-  //   this.setState({ text: e.target.value });
-  // }
-  // handleCityChange(e) {
-  //   this.setState({ city: e.target.value });
-  // }
 
 
   updatePost(e) {

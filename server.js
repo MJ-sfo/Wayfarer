@@ -16,7 +16,8 @@ var port = process.env.API_PORT || 3001;
 //ADD YOUR INFO HERE!
 var dbUser = process.env.MLAB_DBUSER
 var dbPassword = process.env.MLAB_DBPASSWORD
-var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com:33331/mywayfarer'
+// var databaseUrl = 'mongodb://' + dbUser + ':' + dbPassword + '@ds133331.mlab.com:33331/mywayfarer'
+var databaseUrl = 'mongodb://' + 'michaeljlaird@yahoo.com' + ':' + 'Dave123mongo' + '@ds133331.mlab.com:33331/mywayfarer'
 // mongoose.connect(databaseUrl)
 
 
@@ -91,22 +92,6 @@ router.route('/comments')
     })
   })
 
-  // below worked for embedded comments
-  // .post(function(req, res) {
-  //   var post = new db.Comment();
-  //   post.name = req.body.name;
-  //   post.title = req.body.title;
-  //   post.text = req.body.text;
-  //   post.city = req.body.city;
-  //   post.date = Date.now();     //   need to store as time/date so can calculate how old a post is
-  //   post.save(function(err) {
-  //     if (err) {
-  //       res.send(err);
-  //     }
-  //     res.json({ message: 'travel tip successfully added!' });
-  //   });
-  // });
-
 router.route('/comments/:id')
   .get(function(req, res) {
     db.Comment.findById(req.params.id, function(err, comments) {
@@ -164,17 +149,6 @@ router.route('/cities')
         res.json(cities);
       });
     })
-
-// // get specific city info
-// router.route('/cities/:id')
-//   .get(function(req, res) {
-//     db.City.findById(req.params.id, function(err, city) {
-//       if (err) {
-//         res.send(err);
-//       }
-//       res.json(city);
-//     });
-//   })
 
 // get specific city info
 router.route('/cities/:name')

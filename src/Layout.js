@@ -39,8 +39,6 @@ class Layout extends Component {
   }
 
   render() { console.log('LAYOUT props.chilren', this.props.children)
-    // console.log('React.Children', React.Children)
-    // React.Children.map(console.log());
    let children = React.Children.map(this.props.children,
      (child) => {
        console.log('adding newProp to child', child.props)
@@ -49,9 +47,8 @@ class Layout extends Component {
        return child
      }
    );  // let children
-   console.log('children in LAYOUT', children)
+
    console.log('this.state.currentUser', this.state.currentUser)
-  //  console.log('just photo', this.state.currentUser.U.photoURL)
    return (
      <div>
        <Navbar
@@ -64,12 +61,11 @@ class Layout extends Component {
        <p>this is outside navbar</p>
      </div>
    );
-  }
- }
+ }   //  ender() { console.log
+ }  //  class Layout
 
 export default Layout;
 
-//{currentUser: this.state.currentUser}
 
 
 //   {this.props.children}

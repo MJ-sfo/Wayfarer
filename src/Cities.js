@@ -59,21 +59,3 @@ class Cities extends Component {
 }
 
 export default Cities;
-
-//
-// return (
-//   <div>
-//     <div className="cities-hover">
-//       <img src={citiesImage} alt={"citiesImage"} height="100%" width="100%"/>
-//         <span className="cities-text" >
-//         <ul className="dropdown-content2">
-//           <li className="findCity"> Find a City </li>
-//           <li className="cityName"> <Link to={`/cities/${this.props.uniqueID}`}>San Francisco</Link></li>
-//           <li className="cityName"> <a href="/cities/london">London</a></li>
-//           <li className="cityName"> <a href="/cities/gibraltar">Gibraltar</a></li>
-//         </ul>
-//       </span>
-//     </div>
-//   </div>
-// );
-// }

@@ -27,8 +27,6 @@ class City extends Component {
   render() {
     var cityName = this.state.data.name
     var cityImage = this.state.data.image
-    // console.log({cityName})
-    // console.log('props are', this.props.currentUser)
     return (
       <div>
         <h2 id="cityname">{cityName}</h2>

@@ -24,7 +24,7 @@ class PostForm extends Component {
     if (!text || !title) {
       return;
     }
-    console.log("the text lenght is: ", (text).length);
+    console.log("the text length is: ", (text).length);
     this.props.onPostSubmit({title: title, text: text, date:date, city: this.props.cityName})
     this.setState({title: '', text: ''})
 
